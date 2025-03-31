@@ -363,13 +363,7 @@ h1 {
 }
 
 .science-answers button:hover {
-    background-color: #FF8C42;
-    transform: translateY(-2px); /* Slight elevation on hover */
-}
-
-.science-answers button:active {
-    background-color: #E67E22; /* Active state color */
-    transform: translateY(2px); /* Button pressed effect */
+    transform: translateY(-2px);
 }
 
 /* footer */
