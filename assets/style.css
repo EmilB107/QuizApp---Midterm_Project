@@ -60,6 +60,10 @@
   src: url('./fonts/PressStart2P-Regular.ttf') format('truetype');
 }
 
+@font-face { /* cursive */
+  font-family: 'phr';
+  src: url('./fonts/PatrickHand-Regular.ttf') format('truetype');
+}
 
 @font-face {
   font-family: 'pf-display';
@@ -579,6 +583,74 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     white-space: nowrap;/
+}
+
+/* Mathematics */
+.math-overlay {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 3;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.math-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.math-overlay img {
+    width: 100%;
+}
+
+.math-content {
+    color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    margin-top: 40px;
+}
+
+.math-question {
+    margin-bottom: 30px;
+}
+
+.math-question p {
+    font-family: 'phr', cursive;
+    font-size: 1rem;
+}
+
+.math-answers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 30px;
+    width: 80%;
+}
+
+.math-answers button {
+    position: relative;
+    font-family: 'phr', cursive;
+    font-size: .5rem;
+    color: white;
+    width: 100%;
+    height: auto;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 /* Full-Screen Blur - for testing */
