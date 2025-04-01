@@ -34,6 +34,21 @@
   src: url('./fonts/ComicNeue-Bold.ttf') format('truetype');
 }
 
+@font-face { /* sans-serif */
+  font-family: 'audio-wide';
+  src: url('./fonts/Audiowide-Regular.ttf') format('truetype');
+}
+
+@font-face { /* sans-serif */
+  font-family: 'michroma';
+  src: url('./fonts/Michroma-Regular.ttf') format('truetype');
+}
+
+@font-face { /* sans-serif */
+  font-family: 'exo2';
+  src: url('./fonts/Exo2-Regular.ttf') format('truetype');
+}
+
 @font-face {
   font-family: 'pf-display';
   src: url('./fonts/PlayfairDisplay.ttf') format('truetype');
@@ -364,6 +379,131 @@ h1 {
 
 .science-answers button:hover {
     transform: translateY(-2px);
+}
+
+/* Technology */
+.tech-overlay {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 3;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.tech-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.tech-overlay img {
+    width: 100%;
+}
+
+.tech-content {
+    position: absolute;
+    width: 90%;
+    z-index: 3;
+    text-align: center;
+}
+
+.tech-title {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.tech-title p {
+    position: absolute;
+    top: 5%;
+    left: 6%;
+    transform: translate(-50%, -50%);
+    font-family: 'audio-wide', sans-serif;
+    font-size: 1.2rem;
+    color: #00415A;
+}
+
+.tech-title h3 {
+    position: absolute;
+    top: 20%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    font-family: 'michroma', sans-serif;
+    font-size: .5rem;
+    color: white;
+    letter-spacing: 0.4rem; 
+}
+
+.tech-question {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 70px;
+}
+
+.tech-question img {
+    width: 30%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.tech-question p {
+    font-family: 'exo2', sans-serif;
+    font-size: .5rem;
+    color: white;
+}
+
+.tech-answers {
+    position: absolute;
+    top: 90%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 60%;
+}
+
+.tech-answers button {
+    font-family: 'michroma', sans-serif;
+    font-size: 0.285rem;
+    text-align: left;
+    color: white;
+    width: 80%;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 3px 12px;
+}
+
+.tech-answers button span {
+    width: 75%;
+    white-space: wrap;
+    display: inline-block;
+    padding-left: 5px;
+}
+
+/* Full-Screen Blur - for testing */
+.blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
 }
 
 /* footer */
@@ -867,3 +1007,5 @@ footer p {
         width: 70%;
     }
 }
+
+
