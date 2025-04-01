@@ -65,6 +65,16 @@
   src: url('./fonts/PatrickHand-Regular.ttf') format('truetype');
 }
 
+@font-face { /* system-ui */
+  font-family: 'untiqua';
+  src: url('./fonts/UncialAntiqua-Regular.ttf') format('truetype');
+}
+
+@font-face { /* cursive */
+  font-family: 'medsharp';
+  src: url('./fonts/MedievalSharp-Regular.ttf') format('truetype');
+}
+
 @font-face {
   font-family: 'pf-display';
   src: url('./fonts/PlayfairDisplay.ttf') format('truetype');
@@ -597,7 +607,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 1;
+    opacity: 0;
     pointer-events: none;
     z-index: 3;
     transition: opacity 0.5s ease-in-out;
@@ -651,6 +661,91 @@ h1 {
     cursor: pointer;
     background-color: transparent;
     transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Result */
+.result-overlay {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.result-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.result-overlay img {
+    width: 100%;
+}
+
+.result-content {
+    font-family: 'medsharp', cursive;
+    color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.result-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.result-each {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 50px;
+    padding-left: 40px;
+}
+
+.result-each img {
+    width: 10px;
+}
+
+.result-each p {
+    font-size: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.result-total {
+    display: flex;
+    font-size: .7rem;
+    color: #F5AC24;
+    gap: 0 30px;
+    margin-top: 10px;
+    padding-left: 40px;
+}
+
+.result-content button {
+    font-family: 'untiqua', system-ui;
+    font-size: .5rem;
+    color: white;
+    width: auto;
+    border: none;
+    cursor: pointer;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffbf00, 0 0 30px #ffbf00, 0 0 40px #ffbf00;
+    background-color: transparent;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 25px;
 }
 
 /* Full-Screen Blur - for testing */
