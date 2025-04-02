@@ -65,6 +65,11 @@
   src: url('./fonts/PatrickHand-Regular.ttf') format('truetype');
 }
 
+@font-face { /* cursive */
+  font-family: 'phr-sc';
+  src: url('./fonts/PatrickHandSC-Regular.ttf') format('truetype');
+}
+
 @font-face { /* system-ui */
   font-family: 'untiqua';
   src: url('./fonts/UncialAntiqua-Regular.ttf') format('truetype');
@@ -661,6 +666,77 @@ h1 {
     cursor: pointer;
     background-color: transparent;
     transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Mathematics Result */
+.math-result-overlay {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.math-result-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.math-result-overlay img {
+    width: 100%;
+}
+
+.math-result-content {
+    color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.math-result-content h3 {
+    font-family: 'phr-sc', cursive;
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 13px;
+    margin-left: 20px;
+}
+
+.math-result {
+    font-family: 'phr', cursive;
+    font-size: .8rem;
+    text-align: center;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 0;
+    margin-left: 40px;
+}
+
+.math-result .correct {
+     text-shadow: 
+        0 0 5px #0f0, /* Subtle green glow */
+        0 0 10px #0f0, 
+        0 0 20px #0f0, 
+        0 0 30px #0f0;
+}
+
+.math-result .wrong {
+    text-shadow: 
+        0 0 5px #f00, /* Subtle red glow */
+        0 0 10px #f00, 
+        0 0 20px #f00, 
+        0 0 30px #f00;
 }
 
 /* Result */
