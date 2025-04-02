@@ -600,6 +600,74 @@ h1 {
     white-space: nowrap;/
 }
 
+/* History Result */
+.history-result-overlay {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.history-result-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.history-result-overlay img {
+    width: 100%;
+}
+
+.history-result-content {
+    font-family: 'ps2p', system-ui;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.history-result-content h3 {
+    margin-bottom: 20px;
+}
+
+.history-result {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0 50px;
+}
+
+.history-result .result {
+    font-size: 1.5rem;
+}
+
+.history-result img {
+    width: 15px;
+    margin-top: 10px;
+}
+
+.history-result .result-text {
+    font-family: 'roboto', sans-serif;
+    font-size: .5rem;
+}
+
+.history-result .correct {
+    color: #1A954E;
+}
+
+.history-result .wrong {
+    color: #9C2A30;
+}
+
 /* Mathematics */
 .math-overlay {
     position: absolute;
