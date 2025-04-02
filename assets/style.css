@@ -412,6 +412,101 @@ h1 {
     transform: translateY(-2px);
 }
 
+/* Science Result */
+.science-result-overlay {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.science-result-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.science-result-overlay img {
+    width: 100%;
+}
+
+.science-result-content {
+    font-family: 'roboto', sans-serif;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.science-result-content h3 {
+    color: #A6ABBD;
+    font-weight: 700;
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+
+.science-result {
+    font-size: .6rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+.science-result .correct {
+    color: #00B300;
+}
+
+.science-result .wrong {
+    color: #F13E3E;
+}
+
+.progress-circle-cont {
+    width: 60px;
+    height: 60px;
+}
+
+.outer-circle {
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(
+        #f44336 0deg 72deg, /* Red: First 20% (72 degrees out of 360) */
+        #4caf50 72deg 360deg /* Green: Remaining 80% */
+    );
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-circle {
+    position: absolute;
+    background: white;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.inner-circle span {
+    font-size: 1rem;
+    color: #A6ABBD;
+}
+
 /* Technology */
 .tech-overlay {
     position: absolute;
