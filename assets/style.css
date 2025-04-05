@@ -424,7 +424,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 0;
+    opacity: 1;
     pointer-events: none;
     z-index: 3;
     transition: opacity 0.5s ease-in-out;
@@ -1003,19 +1003,19 @@ h1 {
 }
 
 .math-result .correct {
-     text-shadow: 
-        0 0 5px #0f0, /* Subtle green glow */
-        0 0 10px #0f0, 
-        0 0 20px #0f0, 
-        0 0 30px #0f0;
+ text-shadow: 
+ 0 0 5px #0f0, /* Subtle green glow */
+ 0 0 10px #0f0, 
+ 0 0 20px #0f0, 
+ 0 0 30px #0f0;
 }
 
 .math-result .wrong {
     text-shadow: 
-        0 0 5px #f00, /* Subtle red glow */
-        0 0 10px #f00, 
-        0 0 20px #f00, 
-        0 0 30px #f00;
+    0 0 5px #f00, /* Subtle red glow */
+    0 0 10px #f00, 
+    0 0 20px #f00, 
+    0 0 30px #f00;
 }
 
 /* Result */
@@ -1175,6 +1175,25 @@ footer p {
         padding: 3px 18px;
         margin: 5px 18px;
     }
+
+    .science-result-content h3 {
+        font-size: 1.5rem;
+        margin-top: 50px;
+    }
+
+    .science-result {
+        font-size: .8rem;
+        margin-top: 8px;
+    }
+
+    .progress-circle-cont {
+        width: 80px;
+        height: 80px;
+    }
+
+    .inner-circle span {
+        font-size: 1.2rem;
+    }
 }
 
 @media (min-width: 580px) /* 800 */ {
@@ -1221,6 +1240,30 @@ footer p {
         padding: 4px 18px;
         margin: 6px 18px;
     }
+
+    .science-result-overlay {
+        top: 25%;
+        left: 50%;
+    }
+
+    .science-result-content h3 {
+        font-size: 1.8rem;
+        margin-top: 60px;
+    }
+
+    .science-result {
+        font-size: 1rem;
+        margin-top: 8px;
+    }
+
+    .progress-circle-cont {
+        width: 100px;
+        height: 100px;
+    }
+
+    .inner-circle span {
+        font-size: 1.5rem;
+    }
 }
 
 @media (min-width: 640px) /* 800 */ {
@@ -1256,6 +1299,12 @@ footer p {
     .science-answers button {
         padding: 4px 18px;
         margin: 6px 18px;
+    }
+
+    .science-result-overlay {
+        top: 25%;
+        left: 50%;
+        width: 85%;
     }
 
     footer {
@@ -1329,6 +1378,31 @@ footer p {
 
     .science-question {
         margin-bottom: 30px;
+    }
+
+    .science-result-overlay {
+        top: 50%;
+        left: 50%;
+        width: 75%;
+    }
+
+    .science-result-content h3 {
+        font-size: 2rem;
+        margin-top: 60px;
+    }
+
+    .science-result {
+        margin-top: 10px;
+    }
+
+
+    .progress-circle-cont {
+        width: 120px;
+        height: 120px;
+    }
+
+    .inner-circle span {
+        font-size: 1.8rem;
     }
 
     footer {
@@ -1418,6 +1492,26 @@ footer p {
         margin: 10px 25px;
     }
 
+    .science-result-content h3 {
+        font-size: 3rem;
+        margin-top: 100px;
+        margin-bottom: 15px;
+    }
+
+    .science-result {
+        font-size: 1.5rem;
+        margin-top: 15px;
+    }
+
+    .progress-circle-cont {
+        width: 180px;
+        height: 180px;
+    }
+
+    .inner-circle span {
+        font-size: 3rem;
+    }
+
     footer {
         margin-top: 9rem;
     }
@@ -1496,6 +1590,25 @@ footer p {
         margin: 12px 25px;
     }
 
+    .science-result-content h3 {
+        font-size: 4rem;
+        margin-top: 100px;
+    }
+
+    .science-result {
+        font-size: 1.8rem;
+        margin-top: 15px;
+    }
+
+    .progress-circle-cont {
+        width: 200px;
+        height: 200px;
+    }
+
+    .inner-circle span {
+        font-size: 3.5rem;
+    }
+
     footer {
         margin-top: 13rem;
     }
@@ -1524,7 +1637,7 @@ footer p {
     }
 
     .science-title p {
-       font-size: 2.8rem;
+        font-size: 2.8rem;
     }
 
     .science-question {
@@ -1539,6 +1652,14 @@ footer p {
         font-size: 1.5rem;
         padding: 10px 25px;
         margin: 12px 25px;
+    }
+
+    .science-result-content h3 {
+        margin-bottom: 20px;
+    }
+
+    .science-result {
+        margin-top: 20px;
     }
 }
 
@@ -1589,7 +1710,7 @@ footer p {
     }
 
     .science-question {
-        margin-bottom: 100px;
+        margin-bottom: 75px;
     }
 
     .science-question img {
@@ -1604,6 +1725,32 @@ footer p {
         font-size: 1.8rem;
         padding: 8px 25px;
         margin: 16px 25px;
+    }
+
+    .science-result-content h3 {
+        font-size: 5rem;
+        margin-top: 120px;
+        margin-bottom: 20px;
+    }
+
+    .science-result {
+        font-size: 2rem;
+        margin-top: 30px;
+    }
+
+    .progress-circle-cont {
+        width: 250px;
+        height: 250px;
+    }
+
+    .inner-circle span {
+        font-size: 4rem;
+    }
+}
+
+@media (min-height: 768px) /* 1366 x 768 */ {
+    .science-result-overlay {
+        width: 68%;
     }
 }
 
