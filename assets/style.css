@@ -625,7 +625,7 @@ h1 {
 .tech-result-overlay {
     position: absolute;
     top: 20%;
-    left: 50%;
+    left: 47%;
     transform: translate(-50%, -50%);
     width: 90%;
     height: auto;
@@ -633,7 +633,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 0;
+    opacity: 1;
     pointer-events: none;
     z-index: 3;
     transition: opacity 0.5s ease-in-out;
@@ -1003,11 +1003,11 @@ h1 {
 }
 
 .math-result .correct {
- text-shadow: 
- 0 0 5px #0f0, /* Subtle green glow */
- 0 0 10px #0f0, 
- 0 0 20px #0f0, 
- 0 0 30px #0f0;
+   text-shadow: 
+   0 0 5px #0f0, /* Subtle green glow */
+   0 0 10px #0f0, 
+   0 0 20px #0f0, 
+   0 0 30px #0f0;
 }
 
 .math-result .wrong {
@@ -1112,7 +1112,7 @@ h1 {
     height: 100%;
     backdrop-filter: blur(5px);
     background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
+    opacity: 1;
     z-index: 2;
 }
 
@@ -1235,6 +1235,45 @@ footer p {
     .tech-answers button span {
         width: 70%;
     }
+
+    .tech-result-content {
+        margin-top: 60px;
+    }
+
+    .tech-result-content h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .tech-result {
+        margin-top: 25px;
+    }
+
+    .tech-result .result {
+        font-size: 1.5rem;
+    }
+
+    .tech-result .result-text {
+        font-size: .75rem;
+    }
+
+    .progress-bar-cont {
+        height: 15px;
+    }
+
+    .progress-label {
+        top: 20px;
+    }
+
+    .progress-label p {
+        font-size: .35rem;
+    }
+
+    .arrow-up {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 7px solid white;
+    }
 }
 
 @media (min-width: 580px) /* 800 */ {
@@ -1338,6 +1377,49 @@ footer p {
         font-size: 0.5rem;
         width: 80%;
     }
+
+    .tech-result-overlay {
+        top: 23%;
+    }
+
+    .tech-result-content {
+        margin-top: 70px;
+    }
+
+    .tech-result-content h3 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    .tech-result {
+        margin-top: 30px;
+    }
+
+    .tech-result .result {
+        font-size: 1.75rem;
+    }
+
+    .tech-result .result-text {
+        font-size: .8rem;
+    }
+
+    .progress-bar-cont {
+        height: 15px;
+    }
+
+    .progress-label {
+        top: 20px;
+    }
+
+    .progress-label p {
+        font-size: .5rem;
+    }
+
+    .arrow-up {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 7px solid white;
+    }
 }
 
 @media (min-width: 640px) /* 800 */ {
@@ -1418,6 +1500,14 @@ footer p {
     .tech-answers button {
         font-size: 0.55rem;
         width: 80%;
+    }
+
+    .tech-result-overlay {
+        top: 25%;
+    }
+
+    .tech-result {
+        margin-top: 35px;
     }
 
     footer {
@@ -1534,6 +1624,11 @@ footer p {
 
     .tech-answers {
         top: 95%;
+    }
+
+    .tech-result-overlay {
+        top: 45%;
+        width: 75%;
     }
 
     footer {
@@ -1675,11 +1770,56 @@ footer p {
         font-size: 0.8rem;
     }
 
+    .tech-result-overlay {
+        top: 45%;
+        width: 75%;
+    }
+    
+    .tech-result-content {
+        margin-top: 100px;
+        margin-left: 50px;
+    }
+
+    .tech-result-content h3 {
+        font-size: 4rem;
+        margin-bottom: 40px;
+    }
+
+    .tech-result {
+        margin-top: 60px;
+        gap: 0 100px;
+    }
+
+    .tech-result .result {
+        font-size: 2.5rem;
+    }
+
+    .tech-result .result-text {
+        font-size: 1.5rem;
+    }
+
+    .progress-bar-cont {
+        height: 25px;
+    }
+
+    .progress-label {
+        top: 35px;
+    }
+
+    .progress-label p {
+        font-size: .75rem;
+    }
+
+    .arrow-up {
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 10px solid white;
+    }
+
     footer {
         margin-top: 9rem;
     }
 }
-
 
 @media (min-width: 1400px) /* 787 */ {
     .nav-bar {
@@ -1798,6 +1938,29 @@ footer p {
         font-size: 1rem;
     }
 
+    .tech-result-content h3 {
+        font-size: 4rem;
+        margin-bottom: 40px;
+    }
+
+    .tech-result .result {
+        font-size: 3rem;
+    }
+
+    .tech-result .result-text {
+        font-size: 2rem;
+    }
+
+    .progress-label p {
+        font-size: .8rem;
+    }
+
+    .arrow-up {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 12px solid white;
+    }
+
     footer {
         margin-top: 13rem;
     }
@@ -1876,6 +2039,52 @@ footer p {
         top: 98%;
         left: 47%;
         transform: translate(-50%, -30%);
+    }
+
+    .tech-result-content {
+        margin-top: 150px;
+    }
+
+    .tech-result-content h3 {
+        font-size: 5rem;
+    }
+
+    .tech-result {
+        margin-top: 80px;
+    }
+
+    .tech-result .correct {
+        padding: 5px 15px;
+    }
+
+    .tech-result .wrong {
+        padding: 10px 25px;
+    }
+
+    .tech-result .result {
+        font-size: 3.5rem;
+    }
+
+    .tech-result .result-text {
+        font-size: 2.5rem;
+    }
+
+    .progress-bar-cont {
+        height: 30px;
+    }
+
+    .progress-label {
+        top: 40px;
+    }
+
+    .progress-label p {
+        font-size: 1rem;
+    }
+
+    .arrow-up {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 14px solid white;
     }
 }
 
@@ -1992,6 +2201,48 @@ footer p {
 
     .tech-answers button {
         font-size: 1.3rem;
+    }
+
+    .tech-result-content {
+        margin-top: 180px;
+    }
+
+    .tech-result-content h3 {
+        font-size: 6rem;
+    }
+
+    .tech-result {
+        margin-top: 100px;
+    }
+
+    .tech-result .wrong {
+        padding: 10px 35px;
+    }
+
+    .tech-result .result {
+        font-size: 4rem;
+    }
+
+    .tech-result .result-text {
+        font-size: 3rem;
+    }
+
+    .progress-bar-cont {
+        height: 35px;
+    }
+
+    .progress-label {
+        top: 45px;
+    }
+
+    .progress-label p {
+        font-size: 1.25rem;
+    }
+
+    .arrow-up {
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 16px solid white;
     }
 }
 
