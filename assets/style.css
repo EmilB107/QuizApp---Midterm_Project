@@ -424,7 +424,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 1;
+    opacity: 0;
     pointer-events: none;
     z-index: 3;
     transition: opacity 0.5s ease-in-out;
@@ -551,7 +551,7 @@ h1 {
 
 .tech-title p {
     position: absolute;
-    top: 5%;
+    top: -10%;
     left: 6%;
     transform: translate(-50%, -50%);
     font-family: 'audio-wide', sans-serif;
@@ -561,7 +561,7 @@ h1 {
 
 .tech-title h3 {
     position: absolute;
-    top: 20%;
+    top: 5%;
     left: 65%;
     transform: translate(-50%, -50%);
     font-family: 'michroma', sans-serif;
@@ -580,7 +580,7 @@ h1 {
 }
 
 .tech-question img {
-    width: 30%;
+    width: 25%;
     border-radius: 10px;
     margin-bottom: 10px;
 }
@@ -593,7 +593,7 @@ h1 {
 
 .tech-answers {
     position: absolute;
-    top: 90%;
+    top: 92%;
     left: 45%;
     transform: translate(-50%, -50%);
     display: grid;
@@ -1103,7 +1103,7 @@ h1 {
     margin-top: 25px;
 }
 
-/* Full-Screen Blur - for testing */
+/* Full-Screen Blur*/
 .blur-overlay {
     position: fixed;
     top: 0;
@@ -1112,6 +1112,7 @@ h1 {
     height: 100%;
     backdrop-filter: blur(5px);
     background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
     z-index: 2;
 }
 
@@ -1194,6 +1195,46 @@ footer p {
     .inner-circle span {
         font-size: 1.2rem;
     }
+
+    .tech-overlay {
+        top: 23%;
+    }
+
+    .tech-title p {
+        top: -40%;
+        font-size: 1.6rem;
+    }
+
+    .tech-title h3 {
+        top: -10%;
+        font-size: .8rem;
+    }
+
+    .tech-question {
+        padding-bottom: 90px;
+    }
+
+    .tech-question img {
+        margin-bottom: 15px;
+    }
+
+    .tech-question p {
+        font-size: .8rem;
+    }
+
+    .tech-answers {
+        top: 93%;
+        width: 65%;
+    }
+
+    .tech-answers button {
+        font-size: 0.4rem;
+        width: 80%;
+    }
+
+    .tech-answers button span {
+        width: 70%;
+    }
 }
 
 @media (min-width: 580px) /* 800 */ {
@@ -1264,6 +1305,39 @@ footer p {
     .inner-circle span {
         font-size: 1.5rem;
     }
+
+    .tech-overlay {
+        top: 28%;
+    }
+
+    .tech-title p {
+        top: -60%;
+        left: 6%;
+        font-size: 1.8rem;
+    }
+
+    .tech-title h3 {
+        top: -40%;
+        font-size: 1rem;
+    }
+
+    .tech-question img {
+        width: 28%;
+    }
+
+    .tech-question p {
+        font-size: 1rem;
+    }
+
+    .tech-answers {
+        top: 97%;
+        width: 65%;
+    }
+
+    .tech-answers button {
+        font-size: 0.5rem;
+        width: 80%;
+    }
 }
 
 @media (min-width: 640px) /* 800 */ {
@@ -1305,6 +1379,45 @@ footer p {
         top: 25%;
         left: 50%;
         width: 85%;
+    }
+
+    .tech-overlay {
+        top: 29%;
+    }
+
+    .tech-title {
+        padding-bottom: 20px;
+    }
+
+    .tech-title p {
+        top: -100%;
+        transform: translate(-50%, -80%);
+        font-size: 2rem;
+    }
+
+    .tech-title h3 {
+        top: -85%;
+        transform: translate(-50%, -75%);
+        font-size: 1.15rem;
+    }
+
+    .tech-question img {
+        width: 30%;
+    }
+
+    .tech-question p {
+        font-size: 1rem;
+    }
+
+    .tech-answers {
+        top: 97%;
+        transform: translate(-50%, -40%);
+        width: 65%;
+    }
+
+    .tech-answers button {
+        font-size: 0.55rem;
+        width: 80%;
     }
 
     footer {
@@ -1395,7 +1508,6 @@ footer p {
         margin-top: 10px;
     }
 
-
     .progress-circle-cont {
         width: 120px;
         height: 120px;
@@ -1403,6 +1515,25 @@ footer p {
 
     .inner-circle span {
         font-size: 1.8rem;
+    }
+
+    .tech-overlay {
+        top: 50%;
+        width: 80%;
+    }
+
+    .tech-title p {
+        top: -90%;
+    }
+
+    .tech-title h3 {
+        top: -75%;
+        transform: translate(-50%, -70%);
+        font-size: 1.2rem;
+    }
+
+    .tech-answers {
+        top: 95%;
     }
 
     footer {
@@ -1512,6 +1643,38 @@ footer p {
         font-size: 3rem;
     }
 
+    .tech-title p {
+        top: -180%;
+        transform: translate(-50%, -100%);
+        font-size: 2.5rem;
+    }
+
+    .tech-title h3 {
+        top: -150%;
+        transform: translate(-50%, -100%);
+        font-size: 1.5rem;
+        letter-spacing: 1rem; 
+    }
+
+    .tech-question {
+        padding-bottom: 130px;
+    }
+
+    .tech-question p {
+        font-size: 1.4rem;
+    }
+
+    .tech-answers {
+        top: 97%;
+        left: 47%;
+        transform: translate(-50%, -30%);
+        width: 70%;
+    }
+
+    .tech-answers button {
+        font-size: 0.8rem;
+    }
+
     footer {
         margin-top: 9rem;
     }
@@ -1609,6 +1772,32 @@ footer p {
         font-size: 3.5rem;
     }
 
+    .tech-title p {
+        top: -300%;
+        transform: translate(-50%, -100%);
+        font-size: 3rem;
+    }
+
+    .tech-title h3 {
+        top: -230%;
+        transform: translate(-50%, -100%);
+        font-size: 2rem;
+    }
+
+    .tech-question p {
+        font-size: 1.5rem;
+    }
+
+    .tech-answers {
+        top: 98%;
+        left: 47%;
+        transform: translate(-50%, -30%);
+    }
+
+    .tech-answers button {
+        font-size: 1rem;
+    }
+
     footer {
         margin-top: 13rem;
     }
@@ -1660,6 +1849,33 @@ footer p {
 
     .science-result {
         margin-top: 20px;
+    }
+
+    .tech-title p {
+        top: -300%;
+        transform: translate(-50%, -100%);
+        font-size: 3.5rem;
+    }
+
+    .tech-title h3 {
+        top: -200%;
+        transform: translate(-50%, -100%);
+        font-size: 2.35rem;
+    }
+
+    .tech-question {
+        padding-bottom: 180px;
+    }
+
+
+    .tech-question p {
+        font-size: 1.8rem;
+    }
+
+    .tech-answers {
+        top: 98%;
+        left: 47%;
+        transform: translate(-50%, -30%);
     }
 }
 
@@ -1746,11 +1962,36 @@ footer p {
     .inner-circle span {
         font-size: 4rem;
     }
-}
 
-@media (min-height: 768px) /* 1366 x 768 */ {
-    .science-result-overlay {
-        width: 68%;
+    .tech-title p {
+        top: -350%;
+        transform: translate(-50%, -100%);
+        font-size: 4.5rem;
+    }
+
+    .tech-title h3 {
+        top: -250%;
+        transform: translate(-50%, -100%);
+        font-size: 2.8rem;
+    }
+
+    .tech-question {
+        padding-bottom: 210px;
+    }
+
+
+    .tech-question p {
+        font-size: 2.25rem;
+    }
+
+    .tech-answers {
+        top: 98%;
+        left: 47%;
+        transform: translate(-50%, -30%);
+    }
+
+    .tech-answers button {
+        font-size: 1.3rem;
     }
 }
 
@@ -1763,5 +2004,3 @@ footer p {
         width: 70%;
     }
 }
-
-
