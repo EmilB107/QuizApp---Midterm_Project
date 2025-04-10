@@ -1005,11 +1005,11 @@ h1 {
 }
 
 .math-result .correct {
- text-shadow: 
- 0 0 5px #0f0, /* Subtle green glow */
- 0 0 10px #0f0, 
- 0 0 20px #0f0, 
- 0 0 30px #0f0;
+   text-shadow: 
+   0 0 5px #0f0, /* Subtle green glow */
+   0 0 10px #0f0, 
+   0 0 20px #0f0, 
+   0 0 30px #0f0;
 }
 
 .math-result .wrong {
@@ -1327,6 +1327,20 @@ footer p {
     .math-answers button {
         font-size: .75rem;
     }
+
+    .math-result-content {
+        width: 80%;
+        margin-top: 30px;
+    }
+
+    .math-result-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .math-result {
+        font-size: .85rem;
+        margin-left: 50px;
+    }
 }
 
 @media (min-width: 580px) /* 800 */ {
@@ -1523,6 +1537,21 @@ footer p {
     .math-answers button {
         font-size: .9rem;
     }
+
+    .math-result-overlay {
+        top: 25%;
+    }
+
+    .math-result-content h3 {
+        font-size: 1.8rem;
+        margin-bottom: 13px;
+        margin-left: 50px;
+    }
+
+    .math-result {
+        font-size: 1.1rem;
+        margin-left: 60px;
+    }
 }
 
 @media (min-width: 640px) /* 800 */ {
@@ -1673,6 +1702,19 @@ footer p {
 
     .math-answers button {
         font-size: 1rem;
+    }
+
+    .math-result-overlay {
+        top: 28%;
+    }
+
+    .math-result-content h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .math-result {
+        font-size: 1.3rem;
     }
 
     footer {
@@ -1842,6 +1884,19 @@ footer p {
 
     .math-answers button {
         font-size: 1rem;
+    }
+
+    .math-result-overlay {
+        top: 50%;
+        width: 80%;
+    }
+
+    .math-result-content h3 {
+        font-size: 2.25rem;
+    }
+
+    .math-result {
+        font-size: 1.5rem;
     }
 
     footer {
@@ -2096,6 +2151,17 @@ footer p {
         font-size: 1.5rem;
     }
 
+    .math-result-content h3 {
+        font-size: 4rem;
+        margin-left: 80px;
+        margin-bottom: 20px;
+    }
+
+    .math-result {
+        font-size: 2rem;
+        margin-left: 90px;
+    }
+
     footer {
         margin-top: 9rem;
     }
@@ -2299,6 +2365,17 @@ footer p {
         font-size: 1.75rem;
     }
 
+    .math-result-content h3 {
+        font-size: 5rem;
+        margin-left: 100px;
+        margin-bottom: 20px;
+    }
+
+    .math-result {
+        font-size: 2.5rem;
+        margin-left: 110px;
+    }
+
     footer {
         margin-top: 13rem;
     }
@@ -2473,6 +2550,15 @@ footer p {
 
     .math-answers button {
         font-size: 1.8rem;
+    }
+
+    .math-result-content h3 {
+        font-size: 5.5rem;
+        margin-left: 110px;
+    }
+
+    .math-result {
+        font-size: 2.8rem;
     }
 }
 
@@ -2689,6 +2775,16 @@ footer p {
 
     .math-answers button {
         font-size: 2rem;
+    }
+
+    .math-result-content h3 {
+        font-size: 6rem;
+        margin-left: 120px;
+    }
+
+    .math-result {
+        font-size: 3rem;
+        margin-left: 120px;
     }
 }
 
