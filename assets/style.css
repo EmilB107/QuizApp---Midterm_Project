@@ -1319,6 +1319,14 @@ footer p {
         font-size: .75rem;
         padding-top: 3px;
     }
+
+    .math-question p {
+        font-size: 1.25rem;
+    }
+
+    .math-answers button {
+        font-size: .75rem;
+    }
 }
 
 @media (min-width: 580px) /* 800 */ {
@@ -1503,6 +1511,18 @@ footer p {
     .history-result .result-text {
         font-size: .8rem;
     }
+
+    .math-overlay {
+        top: 25%;
+    }
+
+    .math-question p {
+        font-size: 1.5rem;
+    }
+
+    .math-answers button {
+        font-size: .9rem;
+    }
 }
 
 @media (min-width: 640px) /* 800 */ {
@@ -1633,6 +1653,26 @@ footer p {
 
     .history-result .result-text {
         font-size: .85rem;
+    }
+
+    .math-overlay {
+        top: 28%;
+    }
+
+    .math-content {
+        margin-top: 50px;
+    }
+
+    .math-question {
+        margin-bottom: 40px;
+    }
+
+    .math-question p {
+        font-size: 1.75rem;
+    }
+
+    .math-answers button {
+        font-size: 1rem;
     }
 
     footer {
@@ -1777,6 +1817,31 @@ footer p {
     .history-result-overlay {
         top: 50%;
         width: 80%;
+    }
+
+    .math-overlay {
+        top: 50%;
+        width: 80%;
+    }
+
+    .math-content {
+        margin-top: 50px;
+    }
+
+    .math-question {
+        margin-bottom: 40px;
+    }
+
+    .math-question p {
+        font-size: 1.8rem;
+    }
+
+    .math-answers {
+        gap: 20px 30px;
+    }
+
+    .math-answers button {
+        font-size: 1rem;
     }
 
     footer {
@@ -2011,6 +2076,26 @@ footer p {
         font-size: 1.25rem;
     }
 
+    .math-content {
+        margin-top: 55px;
+    }
+
+    .math-question {
+        margin-bottom: 60px;
+    }
+
+    .math-question p {
+        font-size: 2.5rem;
+    }
+
+    .math-answers {
+        gap: 25px 35px;
+    }
+
+    .math-answers button {
+        font-size: 1.5rem;
+    }
+
     footer {
         margin-top: 9rem;
     }
@@ -2194,6 +2279,26 @@ footer p {
         font-size: 1.4rem;
     }
 
+    .math-content {
+        margin-top: 60px;
+    }
+
+    .math-question {
+        margin-bottom: 70px;
+    }
+
+    .math-question p {
+        font-size: 3rem;
+    }
+
+    .math-answers {
+        gap: 30px 40px;
+    }
+
+    .math-answers button {
+        font-size: 1.75rem;
+    }
+
     footer {
         margin-top: 13rem;
     }
@@ -2360,6 +2465,14 @@ footer p {
 
     .history-result .result-text {
         font-size: 1.5rem;
+    }
+
+    .math-question p {
+        font-size: 3.5rem;
+    }
+
+    .math-answers button {
+        font-size: 1.8rem;
     }
 }
 
@@ -2560,6 +2673,22 @@ footer p {
 
     .history-result .result-text {
         font-size: 1.8rem;
+    }
+
+    .math-question {
+        margin-bottom: 100px;
+    }
+
+    .math-question p {
+        font-size: 4.5rem;
+    }
+
+    .math-answers {
+        gap: 40px 50px;
+    }
+
+    .math-answers button {
+        font-size: 2rem;
     }
 }
 
