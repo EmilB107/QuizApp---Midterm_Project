@@ -846,6 +846,7 @@ h1 {
 }
 
 .history-result-content h3 {
+    font-size: 1rem;
     margin-bottom: 20px;
 }
 
@@ -877,6 +878,7 @@ h1 {
 .history-result .result-text {
     font-family: 'roboto', sans-serif;
     font-size: .5rem;
+    padding-top: 3px;
 }
 
 /* Mathematics */
@@ -1290,6 +1292,33 @@ footer p {
     .history-answers button {
         font-size: 0.35rem;
     }
+
+    .history-result-content {
+        margin-top: 20px;
+    }
+
+    .history-result-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    .history-result {
+        gap: 0 60px;
+    }
+
+    .history-result .result {
+        font-size: 1.8rem;
+    }
+
+    .history-result img {
+        width: 18px;
+        margin-top: 15px;
+    }
+
+    .history-result .result-text {
+        font-size: .75rem;
+        padding-top: 3px;
+    }
 }
 
 @media (min-width: 580px) /* 800 */ {
@@ -1452,6 +1481,28 @@ footer p {
     .history-answers button {
         font-size: 0.4rem;
     }
+
+    .history-result-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+    }
+
+    .history-result {
+        gap: 0 65px;
+    }
+
+    .history-result .result {
+        font-size: 2.3rem;
+    }
+
+    .history-result img {
+        width: 20px;
+        margin-top: 20px;
+    }
+
+    .history-result .result-text {
+        font-size: .8rem;
+    }
 }
 
 @media (min-width: 640px) /* 800 */ {
@@ -1553,6 +1604,35 @@ footer p {
 
     .history-answers button {
         font-size: 0.5rem;
+    }
+
+    .history-result-overlay {
+        top: 25%;
+    }
+
+    .history-result-content {
+        margin-top: 25px;
+    }
+
+    .history-result-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .history-result {
+        gap: 0 65px;
+    }
+
+    .history-result .result {
+        font-size: 2.5rem;
+    }
+
+    .history-result img {
+        width: 20px;
+        margin-top: 20px;
+    }
+
+    .history-result .result-text {
+        font-size: .85rem;
     }
 
     footer {
@@ -1692,6 +1772,11 @@ footer p {
     .history-question p {
         font-size: 1rem;
         line-height: 1.5;
+    }
+
+    .history-result-overlay {
+        top: 50%;
+        width: 80%;
     }
 
     footer {
@@ -1904,6 +1989,28 @@ footer p {
         font-size: 0.6rem;
     }
 
+    .history-result-content h3 {
+        font-size: 2.25rem;
+        margin-bottom: 60px;
+    }
+
+    .history-result {
+        gap: 0 120px;
+    }
+
+    .history-result .result {
+        font-size: 4rem;
+    }
+
+    .history-result img {
+        width: 30px;
+        margin-top: 30px;
+    }
+
+    .history-result .result-text {
+        font-size: 1.25rem;
+    }
+
     footer {
         margin-top: 9rem;
     }
@@ -2065,6 +2172,28 @@ footer p {
         font-size: 0.75rem;
     }
 
+    .history-result-content h3 {
+        font-size: 2.5rem;
+        margin-bottom: 70px;
+    }
+
+    .history-result {
+        gap: 0 130px;
+    }
+
+    .history-result .result {
+        font-size: 4.5rem;
+    }
+
+    .history-result img {
+        width: 35px;
+        margin-top: 35px;
+    }
+
+    .history-result .result-text {
+        font-size: 1.4rem;
+    }
+
     footer {
         margin-top: 13rem;
     }
@@ -2209,6 +2338,28 @@ footer p {
 
     .history-answers button {
         font-size: 0.8rem;
+    }
+
+    .history-result-content h3 {
+        font-size: 2.8rem;
+        margin-bottom: 80px;
+    }
+
+    .history-result {
+        gap: 0 140px;
+    }
+
+    .history-result .result {
+        font-size: 6rem;
+    }
+
+    .history-result img {
+        width: 40px;
+        margin-top: 50px;
+    }
+
+    .history-result .result-text {
+        font-size: 1.5rem;
     }
 }
 
@@ -2387,6 +2538,28 @@ footer p {
 
     .history-answers button {
         font-size: 1rem;
+    }
+
+    .history-result-content h3 {
+        font-size: 3.25rem;
+        margin-bottom: 100px;
+    }
+
+    .history-result {
+        gap: 0 160px;
+    }
+
+    .history-result .result {
+        font-size: 8rem;
+    }
+
+    .history-result img {
+        width: 50px;
+        margin-top: 60px;
+    }
+
+    .history-result .result-text {
+        font-size: 1.8rem;
     }
 }
 
