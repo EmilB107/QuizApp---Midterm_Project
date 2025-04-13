@@ -638,6 +638,7 @@ h1 {
     pointer-events: none;
     z-index: 3;
     transition: opacity 0.5s ease-in-out;
+    background-color: #151A24;
 }
 
 .tech-result-overlay.active {
