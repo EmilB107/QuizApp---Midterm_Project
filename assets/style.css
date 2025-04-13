@@ -513,7 +513,7 @@ h1 {
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
+    width: 90%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -523,6 +523,7 @@ h1 {
     pointer-events: none;
     z-index: 3;
     transition: opacity 0.5s ease-in-out;
+    background-color: #151A24;
 }
 
 .tech-overlay.active {
