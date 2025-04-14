@@ -152,18 +152,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'Science':
                     loadQuestion('Science', scienceOverlay);
                     scienceOverlay.classList.add('active');
+                    scienceOverlay.scrollIntoView({ behavior: 'smooth' });
                     break;
                 case 'Technology':
                     loadQuestion('Technology', techOverlay);
                     techOverlay.classList.add('active');
+                    techOverlay.scrollIntoView({ behavior: 'smooth' });
                     break;
                 case 'History':
                     loadQuestion('History', historyOverlay);
                     historyOverlay.classList.add('active');
+                    historyOverlay.scrollIntoView({ behavior: 'smooth' });
                     break;
                 case 'Mathematics':
                     loadQuestion('Mathematics', mathOverlay);
                     mathOverlay.classList.add('active');
+                    mathOverlay.scrollIntoView({ behavior: 'smooth' });
                     break;
             }
             
