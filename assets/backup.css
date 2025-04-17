@@ -176,7 +176,7 @@ h1 {
 
 /* quest paths section */
 .quest-paths {
-    background-image: url('/assets/img/lower_bg.png'); /* Background image */
+    background-image: url('/assets/img/lower_bg.png');
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -236,23 +236,64 @@ h1 {
 }
 
 .paths img {
-    width: 80%;
+    width: 70px;
+    height: 95px;
 }
 
-.banner-label {
-    font-family: 'pf-display', serif; /* Apply serif font */
+.paths span {
+    font-family: 'pf-display', serif;
     font-size: .5rem;
     color: white;
     text-align: center;
     padding-top: 1rem;
 }
 
+.paths ul li a:hover img {
+    height: 110px;
+}
+
+.paths .inactive {
+    pointer-events: none;
+}
+
+.paths .inactive img {
+    height: 50px;
+}
+
+.paths .inactive span {
+    padding-top: .5rem;
+}
+
+.paths ul li a:hover .science-label {
+    color: #A33E37CC;
+    text-shadow: 0 0 5px #A33E37CC;
+    transition: color 0.3s ease, text-shadow 0.3s ease; 
+}
+
+.paths ul li a:hover .tech-label {
+    color: #193D71;
+    text-shadow: 0 0 5px #193D71CC;
+    transition: color 0.3s ease, text-shadow 0.3s ease; 
+}
+
+.paths ul li a:hover .history-label {
+    color: #D19637;
+    text-shadow: 0 0 5px #D19637CC;
+    transition: color 0.3s ease, text-shadow 0.3s ease; 
+}
+
+.paths ul li a:hover .math-label {
+    color: #086C5C;
+    text-shadow: 0 0 5px #086C5CCC;
+    transition: color 0.3s ease, text-shadow 0.3s ease; 
+}
+
 /* About Overlay */
 .about-overlay {
-    position: absolute; /* Positioned relative to the closest ancestor with position */
-    top: 20%; /* Offset from the top of the parent */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* True center alignment */
+    position: absolute;/
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 90%;
     height: 20%;
     display: flex;
@@ -924,8 +965,8 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 1;
-    pointer-events: auto;
+    opacity: 0;
+    pointer-events: none;
     z-index: 3;
     transition: opacity 0.5s ease-in-out;
 }
@@ -967,24 +1008,6 @@ h1 {
     width: 80%;
 }
 
-/*.math-answers button {
-    position: relative;
-    overflow: visible;
-    font-family: 'phr', cursive;
-    font-size: .5rem;
-    color: white;
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.math-answers button:hover {
-    background: url('/assets/img/math_hover.png') no-repeat center;
-    background-size: 100% 100%;
-
-}*/
-
 .math-answers button {
     position: relative;
     overflow: visible;
@@ -996,7 +1019,6 @@ h1 {
     cursor: pointer;
     background-color: transparent;
     transition: transform 0.2s ease;
-
 }
 
 .math-answers button::after {
@@ -1111,11 +1133,11 @@ h1 {
 }
 
 .math-result .correct {
-   text-shadow: 
-   0 0 5px #0f0, /* Subtle green glow */
-   0 0 10px #0f0, 
-   0 0 20px #0f0, 
-   0 0 30px #0f0;
+ text-shadow: 
+ 0 0 5px #0f0, /* Subtle green glow */
+ 0 0 10px #0f0, 
+ 0 0 20px #0f0, 
+ 0 0 30px #0f0;
 }
 
 .math-result .wrong {
@@ -1227,7 +1249,10 @@ h1 {
 
 /* footer */
 footer {
-    margin-top: 18rem;
+    position: absolute;
+    bottom: 80px;
+    width: 100%;
+    text-align: center;
 }
 
 footer p {
@@ -1240,10 +1265,6 @@ footer p {
 @media (min-width: 480px) /* 800 */ {
     .paths {
         margin-top: -2.18rem;
-    }
-
-    footer {
-        margin-top: 15rem;
     }
 
     .science-overlay {
@@ -1468,6 +1489,19 @@ footer p {
 @media (min-width: 580px) /* 800 */ {
     .paths {
         margin-top: -2.6rem;
+    }
+
+    .paths img {
+        width: 100px;
+        height: 130px;
+    }
+
+    .paths ul li a:hover img {
+        height: 160px;
+    }
+
+    .paths .inactive img {
+        height: 90px;
     }
 
     .science-overlay {
@@ -1853,10 +1887,6 @@ footer p {
     .math-result {
         font-size: 1.3rem;
     }
-
-    footer {
-        margin-top: 13rem;
-    }
 }
 
 @media (min-width: 768px) /* 432 */ {
@@ -1891,9 +1921,22 @@ footer p {
         margin-top: -3.5rem;
     }
 
-    .banner-label {
+    .paths span {
         font-size: 1rem;
-        padding-top: 2rem;
+        padding-top: 1.5rem;
+    }
+
+    .paths img {
+        width: 140px;
+        height: 180px;
+    }
+
+    .paths ul li a:hover img {
+        height: 210px;
+    }
+
+    .paths .inactive img {
+        height: 130px;
     }
 
     .about-overlay {
@@ -2057,7 +2100,7 @@ footer p {
     }
 
     footer {
-        margin-top: 7rem;
+        bottom: 30px;
     }
 
     footer p {
@@ -2080,11 +2123,7 @@ footer p {
     }
 
     .paths {
-        margin-top: -6.25rem;
-    }
-
-    .paths img {
-        width: 85%;
+        margin-top: -5.3rem;
     }
 
     .banner h2 {
@@ -2092,9 +2131,22 @@ footer p {
         padding-bottom: 2.8rem;
     }
 
-    .banner-label {
+    .paths span {
         font-size: 1.5rem;
-        padding-top: 3rem;
+        padding-top: 2rem;
+    }
+
+    .paths img {
+        width: 210px;
+        height: 260px;
+    }
+
+    .paths ul li a:hover img {
+        height: 290px;
+    }
+
+    .paths .inactive img {
+        height: 160px;
     }
 
     .about-overlay h2 {
@@ -2337,7 +2389,7 @@ footer p {
     }
 
     footer {
-        margin-top: 9rem;
+        bottom: 80px;
     }
 }
 
@@ -2354,16 +2406,25 @@ footer p {
         margin-top: -6.5rem;
     }
 
-    .paths li img {
-        width: 100%;
-    }
-
     .banner h2 {
         padding-bottom: 3.5rem;
     }
 
-    .banner-label {
+    .paths span {
         font-size: 2rem;
+    }
+
+    .paths img {
+        width: 240px;
+        height: 280px;
+    }
+
+    .paths ul li a:hover img {
+        height: 310px;
+    }
+
+    .paths .inactive img {
+        height: 180px;
     }
 
     .about-overlay h2 {
@@ -2562,13 +2623,26 @@ footer p {
     }
 
     footer {
-        margin-top: 13rem;
+        bottom: 100px;
     }
 }
 
 @media (min-width: 1600px) /* 900 */ {
     .paths {
-        margin-top: -8rem;
+        margin-top: -7.25rem;
+    }
+
+    .paths img {
+        width: 260px;
+        height: 310px;
+    }
+
+    .paths ul li a:hover img {
+        height: 350px;
+    }
+
+    .paths .inactive img {
+        height: 210px;
     }
 
     .science-overlay {
@@ -2762,6 +2836,10 @@ footer p {
     .math-result {
         font-size: 2.8rem;
     }
+
+    footer {
+        bottom: 120px;
+    }
 }
 
 @media (min-width: 1900px) {
@@ -2776,6 +2854,19 @@ footer p {
 
     .paths ul li a {
         width: 80%;
+    }
+
+    .paths img {
+        width: 300px;
+        height: 350px;
+    }
+
+    .paths ul li a:hover img {
+        height: 390px;
+    }
+
+    .paths .inactive img {
+        height: 230px;
     }
 
     .banner h2 {
@@ -3001,9 +3092,13 @@ footer p {
         font-size: 3rem;
         margin-left: 120px;
     }
+
+    footer {
+        bottom: 150px;
+    }
 }
 
-@media (min-height: 1068px) {
+/*@media (min-height: 1068px) {
     footer {
         margin-top: 20rem;
     }
@@ -3011,4 +3106,4 @@ footer p {
     .science-overlay {
         width: 70%;
     }
-}
+}*/

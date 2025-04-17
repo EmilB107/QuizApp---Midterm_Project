@@ -1249,7 +1249,10 @@ h1 {
 
 /* footer */
 footer {
-    margin-top: 18rem;
+    position: absolute;
+    bottom: 80px;
+    width: 100%;
+    text-align: center;
 }
 
 footer p {
@@ -1262,10 +1265,6 @@ footer p {
 @media (min-width: 480px) /* 800 */ {
     .paths {
         margin-top: -2.18rem;
-    }
-
-    footer {
-        margin-top: 15rem;
     }
 
     .science-overlay {
@@ -1888,10 +1887,6 @@ footer p {
     .math-result {
         font-size: 1.3rem;
     }
-
-    footer {
-        margin-top: 13rem;
-    }
 }
 
 @media (min-width: 768px) /* 432 */ {
@@ -2105,7 +2100,7 @@ footer p {
     }
 
     footer {
-        margin-top: 7rem;
+        bottom: 30px;
     }
 
     footer p {
@@ -2394,7 +2389,7 @@ footer p {
     }
 
     footer {
-        margin-top: 9rem;
+        bottom: 80px;
     }
 }
 
@@ -2628,7 +2623,7 @@ footer p {
     }
 
     footer {
-        margin-top: 13rem;
+        bottom: 100px;
     }
 }
 
@@ -2840,6 +2835,10 @@ footer p {
 
     .math-result {
         font-size: 2.8rem;
+    }
+
+    footer {
+        bottom: 120px;
     }
 }
 
@@ -3093,9 +3092,13 @@ footer p {
         font-size: 3rem;
         margin-left: 120px;
     }
+
+    footer {
+        bottom: 150px;
+    }
 }
 
-@media (min-height: 1068px) {
+/*@media (min-height: 1068px) {
     footer {
         margin-top: 20rem;
     }
@@ -3103,4 +3106,4 @@ footer p {
     .science-overlay {
         width: 70%;
     }
-}
+}*/
