@@ -494,17 +494,19 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 25px;
 }
 
 .science-result-content h3 {
     color: #A6ABBD;
     font-weight: 700;
-    margin-top: 35px;
-    margin-bottom: 10px;
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .science-result {
-    font-size: .6rem;
+    font-size: .5rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -520,8 +522,8 @@ h1 {
 }
 
 .progress-circle-cont {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
 }
 
 .outer-circle {
@@ -551,8 +553,38 @@ h1 {
 }
 
 .inner-circle span {
-    font-size: 1rem;
+    font-size: .8rem;
     color: #A6ABBD;
+}
+
+.science-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 50px;
+    margin-top: 10px;
+}
+
+.science-options button {
+    font-family: 'comic-bold', cursive;
+    font-size: 0.5rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.science-options button.choose {
+    background-color: #1C7DCB;
+}
+
+.science-options button.retake {
+    background-color: #F13E3E;
+}
+
+.science-options button:hover {
+    background-color: #00B900;
 }
 
 /* Technology */
@@ -1133,11 +1165,11 @@ h1 {
 }
 
 .math-result .correct {
- text-shadow: 
- 0 0 5px #0f0, /* Subtle green glow */
- 0 0 10px #0f0, 
- 0 0 20px #0f0, 
- 0 0 30px #0f0;
+   text-shadow: 
+   0 0 5px #0f0, /* Subtle green glow */
+   0 0 10px #0f0, 
+   0 0 20px #0f0, 
+   0 0 30px #0f0;
 }
 
 .math-result .wrong {
@@ -1308,22 +1340,31 @@ footer p {
     }
 
     .science-result-content h3 {
-        font-size: 1.5rem;
-        margin-top: 50px;
+        font-size: 1.25rem;
+        margin-top: 20px;
     }
 
     .science-result {
-        font-size: .8rem;
+        font-size: .7rem;
         margin-top: 8px;
     }
 
     .progress-circle-cont {
-        width: 80px;
-        height: 80px;
+        width: 60px;
+        height: 60px;
     }
 
     .inner-circle span {
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
+
+    .science-options {
+        gap: 0 60px;
+        margin-top: 15px;
+    }
+
+    .science-options button {
+        font-size: 0.6rem;
     }
 
     .tech-overlay {
@@ -1550,22 +1591,26 @@ footer p {
     }
 
     .science-result-content h3 {
-        font-size: 1.8rem;
-        margin-top: 60px;
+        font-size: 1.5rem;
+        margin-top: 30px;
     }
 
     .science-result {
-        font-size: 1rem;
+        font-size: .8rem;
         margin-top: 8px;
     }
 
     .progress-circle-cont {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
 
     .inner-circle span {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+    }
+
+    .science-options button {
+        font-size: 0.75rem;
     }
 
     .tech-overlay {
@@ -1977,21 +2022,31 @@ footer p {
     }
 
     .science-result-content h3 {
-        font-size: 2rem;
-        margin-top: 60px;
+        font-size: 1.75rem;
+        margin-top: 40px;
     }
 
     .science-result {
+        font-size: 1rem;
         margin-top: 10px;
     }
 
     .progress-circle-cont {
-        width: 120px;
-        height: 120px;
+        width: 90px;
+        height: 90px;
     }
 
     .inner-circle span {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
+    }
+
+    .science-options {
+        gap: 0 80px;
+        margin-top: 20px;
+    }
+
+    .science-options button {
+        font-size: .85rem;
     }
 
     .tech-overlay {
@@ -2196,8 +2251,8 @@ footer p {
     }
 
     .science-result-content h3 {
-        font-size: 3rem;
-        margin-top: 100px;
+        font-size: 2.5rem;
+        margin-top: 70px;
         margin-bottom: 15px;
     }
 
@@ -2207,12 +2262,21 @@ footer p {
     }
 
     .progress-circle-cont {
-        width: 180px;
-        height: 180px;
+        width: 130px;
+        height: 130px;
     }
 
     .inner-circle span {
-        font-size: 3rem;
+        font-size: 2rem;
+    }
+
+    .science-options {
+        gap: 0 120px;
+        margin-top: 30px;
+    }
+
+    .science-options button {
+        font-size: 1.5rem;
     }
 
     .tech-title p {
@@ -2475,22 +2539,31 @@ footer p {
     }
 
     .science-result-content h3 {
-        font-size: 4rem;
-        margin-top: 100px;
+        font-size: 3rem;
+        margin-top: 80px;
     }
 
     .science-result {
-        font-size: 1.8rem;
+        font-size: 1.75rem;
         margin-top: 15px;
     }
 
     .progress-circle-cont {
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
     }
 
     .inner-circle span {
-        font-size: 3.5rem;
+        font-size: 2.5rem;
+    }
+
+    .science-options {
+        gap: 0 150px;
+        margin-top: 40px;
+    }
+
+    .science-options button {
+        font-size: 1.8rem;
     }
 
     .tech-title p {
@@ -2920,7 +2993,7 @@ footer p {
     }
 
     .science-result-content h3 {
-        font-size: 5rem;
+        font-size: 4.5rem;
         margin-top: 120px;
         margin-bottom: 20px;
     }
@@ -2931,12 +3004,21 @@ footer p {
     }
 
     .progress-circle-cont {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
     }
 
     .inner-circle span {
-        font-size: 4rem;
+        font-size: 3.5rem;
+    }
+
+    .science-options {
+        gap: 0 200px;
+        margin-top: 50px;
+    }
+
+    .science-options button {
+        font-size: 2.5rem;
     }
 
     .tech-title p {
