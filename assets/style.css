@@ -973,7 +973,9 @@ h1 {
 }
 
 .history-result-content h3 {
+    text-align: center;
     font-size: 1rem;
+    margin-top: 30px;
     margin-bottom: 20px;
 }
 
@@ -1006,6 +1008,20 @@ h1 {
     font-family: 'roboto', sans-serif;
     font-size: .5rem;
     padding-top: 3px;
+}
+
+.history-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 15px;
+}
+
+.history-options button {
+    border: none;
+    background: none;
+    width: 80px;
+    height: auto;
+    cursor: pointer;
 }
 
 /* Mathematics */
@@ -1188,11 +1204,11 @@ h1 {
 }
 
 .math-result .correct {
-   text-shadow: 
-   0 0 5px #0f0, /* Subtle green glow */
-   0 0 10px #0f0, 
-   0 0 20px #0f0, 
-   0 0 30px #0f0;
+ text-shadow: 
+ 0 0 5px #0f0, /* Subtle green glow */
+ 0 0 10px #0f0, 
+ 0 0 20px #0f0, 
+ 0 0 30px #0f0;
 }
 
 .math-result .wrong {
@@ -1771,6 +1787,10 @@ footer p {
         font-size: .8rem;
     }
 
+    .history-options button {
+        width: 100px;
+    }
+
     .math-overlay {
         top: 25%;
     }
@@ -2159,6 +2179,15 @@ footer p {
         width: 80%;
     }
 
+    .history-options {
+        gap: 0 30px;
+        margin-top: 20px;
+    }
+
+    .history-options button {
+        width: 110px;
+    }
+
     .math-overlay {
         top: 50%;
         width: 80%;
@@ -2475,6 +2504,15 @@ footer p {
         font-size: 1.25rem;
     }
 
+    .history-options {
+        gap: 0 60px;
+        margin-top: 25px;
+    }
+
+    .history-options button {
+        width: 200px;
+    }
+
     .math-content {
         margin-top: 55px;
     }
@@ -2733,6 +2771,15 @@ footer p {
         font-size: 1.4rem;
     }
 
+    .history-options {
+        gap: 0 70px;
+        margin-top: 35px;
+    }
+
+    .history-options button {
+        width: 210px;
+    }
+
     .math-content {
         margin-top: 60px;
     }
@@ -2959,6 +3006,10 @@ footer p {
 
     .history-result .result-text {
         font-size: 1.5rem;
+    }
+
+    .history-options button {
+        width: 230px;
     }
 
     .math-question p {
@@ -3207,7 +3258,7 @@ footer p {
 
     .history-result-content h3 {
         font-size: 3.25rem;
-        margin-bottom: 100px;
+        margin-bottom: 85px;
     }
 
     .history-result {
@@ -3226,6 +3277,16 @@ footer p {
     .history-result .result-text {
         font-size: 1.8rem;
     }
+
+    .history-options {
+        gap: 0 80px;
+        margin-top: 50px;
+    }
+
+    .history-options button {
+        width: 280px;
+    }
+
 
     .math-question {
         margin-bottom: 100px;
