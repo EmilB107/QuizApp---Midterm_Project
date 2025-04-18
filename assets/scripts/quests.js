@@ -114,12 +114,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryLinks = document.querySelectorAll('.paths ul li a');
     
     const scienceOverlay = document.querySelector('.science-overlay');
-    const techOverlay = document.querySelector('.tech-overlay');
-    const historyOverlay = document.querySelector('.history-overlay');
-    const mathOverlay = document.querySelector('.math-overlay');
     const scienceResultOverlay = document.querySelector('.science-result-overlay');
+    const techOverlay = document.querySelector('.tech-overlay');
     const techResultOverlay = document.querySelector('.tech-result-overlay');
+    const historyOverlay = document.querySelector('.history-overlay');
     const historyResultOverlay = document.querySelector('.history-result-overlay');
+    const mathOverlay = document.querySelector('.math-overlay');
     const mathResultOverlay = document.querySelector('.math-result-overlay');
     const resultOverlay = document.querySelector('.result-overlay');
     const blurOverlay = document.querySelector('.blur-overlay');
@@ -146,7 +146,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             hideAllOverlays();
             
-            const category = this.querySelector('.banner-label').textContent;
+            const categorySpan = this.querySelector('span[class$="-label"]');
+            if (!categorySpan) return;
+            
+            const category = categorySpan.textContent;
             
             switch(category) {
                 case 'Science':
@@ -214,7 +217,13 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const answerButtons = overlay.querySelectorAll('.history-answers button');
             questionData.options.forEach((option, index) => {
-                answerButtons[index].querySelector('span').textContent = option;
+                const span = answerButtons[index].querySelector('span');
+
+                if (span) {
+                    span.textContent = option;
+                } else {
+                    answerButtons[index].textContent = option;
+                }
                 
                 const newButton = answerButtons[index].cloneNode(true);
                 answerButtons[index].parentNode.replaceChild(newButton, answerButtons[index]);
