@@ -8,7 +8,6 @@
   src: url('./fonts/BungeeOutline-Regular.ttf') format('truetype');
 }
 
-
 @font-face {
   font-family: 'b-shade';
   src: url('./fonts/BungeeShade-Regular.ttf') format('truetype');
@@ -54,7 +53,6 @@
   src: url('./fonts/Roboto-Regular.ttf') format('truetype');
 }
 
-
 @font-face { /* system-ui */
   font-family: 'ps2p';
   src: url('./fonts/PressStart2P-Regular.ttf') format('truetype');
@@ -78,6 +76,11 @@
 @font-face { /* cursive */
   font-family: 'medsharp';
   src: url('./fonts/MedievalSharp-Regular.ttf') format('truetype');
+}
+
+@font-face { /* cursive */
+  font-family: 'gloria';
+  src: url('./fonts/GloriaHallelujah-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -286,6 +289,53 @@ h1 {
     color: #086C5C;
     text-shadow: 0 0 5px #086C5CCC;
     transition: color 0.3s ease, text-shadow 0.3s ease; 
+}
+
+.end-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 30px;
+    margin-top: 3rem;
+    display: none;
+}
+
+.end-options button {
+    font-family: 'untiqua', system-ui;
+    font-size: .8rem;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    text-shadow: 0 0 2px rgba(255, 255, 0, 0.8);
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.end-options button:hover {
+    transform: translateY(1px);
+    text-shadow: 
+    0 0 4px rgba(255, 255, 0, 0.9),
+    0 0 8px rgba(255, 255, 0, 0.8),
+    0 0 12px rgba(255, 255, 0, 0.7);
+}
+
+.end-options button.view-score {
+    position: relative;
+}
+
+.end-options button.view-score::after {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background: url('/assets/img/view_score.png') no-repeat bottom;
+    background-size: contain;
+}
+
+.end-options button.view-score:hover::after {
+    display: none;
 }
 
 /* About Overlay */
@@ -734,8 +784,8 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 1;
-    pointer-events: auto;
+    opacity: 0;
+    pointer-events: none;
     z-index: 3;
     transition: opacity 0.5s ease-in-out;
     background-color: #151A24;
@@ -769,10 +819,9 @@ h1 {
 
 .tech-result {
     text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 0 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 30px;
     margin-top: 20px;
 }
 
@@ -974,7 +1023,9 @@ h1 {
 }
 
 .history-result-content h3 {
+    text-align: center;
     font-size: 1rem;
+    margin-top: 30px;
     margin-bottom: 20px;
 }
 
@@ -1007,6 +1058,20 @@ h1 {
     font-family: 'roboto', sans-serif;
     font-size: .5rem;
     padding-top: 3px;
+}
+
+.history-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 15px;
+}
+
+.history-options button {
+    border: none;
+    background: none;
+    width: 80px;
+    height: auto;
+    cursor: pointer;
 }
 
 /* Mathematics */
@@ -1202,6 +1267,31 @@ h1 {
     0 0 10px #f00, 
     0 0 20px #f00, 
     0 0 30px #f00;
+}
+
+.math-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 70%;
+    gap: 0 30px;
+}
+
+.math-options button {
+    background: transparent;
+    color: white;
+    border: 1px dashed white;
+    padding: 3px 0;
+    font-family: 'gloria', cursive;
+    font-size: .5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.math-options button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
 /* Result */
@@ -1691,6 +1781,7 @@ footer p {
     }
 
     .tech-result {
+        gap: 0 60px;
         margin-top: 30px;
     }
 
@@ -1771,6 +1862,10 @@ footer p {
         font-size: .8rem;
     }
 
+    .history-options button {
+        width: 100px;
+    }
+
     .math-overlay {
         top: 25%;
     }
@@ -1806,6 +1901,16 @@ footer p {
     .math-result {
         font-size: 1.1rem;
         margin-left: 60px;
+    }
+
+    .math-options {
+        margin-top: 25px;
+        width: 60%;
+        gap: 0 40px;
+    }
+
+    .math-options button {
+        font-size: .6rem;
     }
 }
 
@@ -2027,6 +2132,14 @@ footer p {
         height: 130px;
     }
 
+    .end-options {
+        gap: 0 50px;
+    }
+
+    .end-options button {
+        font-size: 1rem;
+    }
+
     .about-overlay {
         top: 50%;
         left: 50%;
@@ -2116,6 +2229,18 @@ footer p {
         width: 75%;
     }
 
+    .tech-result {
+        gap: 0 70px;
+    }
+
+    .tech-options {
+        gap: 0 40px;
+    }
+
+    .tech-options button {
+        font-size: 0.65rem;
+    } 
+
     .history-overlay {
         top: 50%;
         width: 80%;
@@ -2145,6 +2270,15 @@ footer p {
     .history-result-overlay {
         top: 50%;
         width: 80%;
+    }
+
+    .history-options {
+        gap: 0 30px;
+        margin-top: 20px;
+    }
+
+    .history-options button {
+        width: 110px;
     }
 
     .math-overlay {
@@ -2245,6 +2379,15 @@ footer p {
 
     .paths .inactive img {
         height: 160px;
+    }
+
+    .end-options {
+        gap: 0 80px;
+        margin-top: 4rem;
+    }
+
+    .end-options button {
+        font-size: 1.25rem;
     }
 
     .about-overlay h2 {
@@ -2360,12 +2503,12 @@ footer p {
     }
     
     .tech-result-content {
-        margin-top: 100px;
+        margin-top: 150px;
         margin-left: 50px;
     }
 
     .tech-result-content h3 {
-        font-size: 4rem;
+        font-size: 3.5rem;
         margin-bottom: 40px;
     }
 
@@ -2399,6 +2542,17 @@ footer p {
         border-right: 7px solid transparent;
         border-bottom: 10px solid white;
     }
+
+    .tech-options {
+        gap: 0 60px;
+        margin-top: 20px;
+    }
+
+    .tech-options button {
+        font-size: 1rem;
+        border: .125rem solid #00BCD4;
+        border-radius: 10px;
+    } 
 
     .history-overlay {
         top: 50%;
@@ -2452,6 +2606,15 @@ footer p {
         font-size: 1.25rem;
     }
 
+    .history-options {
+        gap: 0 60px;
+        margin-top: 25px;
+    }
+
+    .history-options button {
+        width: 200px;
+    }
+
     .math-content {
         margin-top: 55px;
     }
@@ -2495,6 +2658,17 @@ footer p {
         margin-left: 90px;
     }
 
+    .math-options {
+        margin-top: 35px;
+        width: 60%;
+        gap: 0 70px;
+    }
+
+    .math-options button {
+        font-size: 1rem;
+        padding: 6px 0;
+    }
+
     footer {
         bottom: 80px;
     }
@@ -2532,6 +2706,15 @@ footer p {
 
     .paths .inactive img {
         height: 180px;
+    }
+
+    .end-options {
+        gap: 0 100px;
+        margin-top: 5rem;
+    }
+
+    .end-options button {
+        font-size: 1.5rem;
     }
 
     .about-overlay h2 {
@@ -2641,6 +2824,10 @@ footer p {
         margin-bottom: 40px;
     }
 
+    .tech-result {
+        gap: 0 120px;
+    }
+
     .tech-result .result {
         font-size: 3rem;
     }
@@ -2658,6 +2845,15 @@ footer p {
         border-right: 8px solid transparent;
         border-bottom: 12px solid white;
     }
+
+    .tech-options {
+        gap: 0 80px;
+        margin-top: 25px;
+    }
+
+    .tech-options button {
+        font-size: 1.25rem;
+    } 
 
     .history-content {
         margin-top: 110px;
@@ -2695,6 +2891,15 @@ footer p {
 
     .history-result .result-text {
         font-size: 1.4rem;
+    }
+
+    .history-options {
+        gap: 0 70px;
+        margin-top: 35px;
+    }
+
+    .history-options button {
+        width: 210px;
     }
 
     .math-content {
@@ -2738,6 +2943,10 @@ footer p {
         margin-left: 110px;
     }
 
+    .math-options button {
+        font-size: 1.2rem;
+    }
+
     footer {
         bottom: 100px;
     }
@@ -2759,6 +2968,15 @@ footer p {
 
     .paths .inactive img {
         height: 210px;
+    }
+
+    .end-options {
+        gap: 0 120px;
+        margin-top: 6rem;
+    }
+
+    .end-options button {
+        font-size: 1.75rem;
     }
 
     .science-overlay {
@@ -2832,23 +3050,15 @@ footer p {
     }
 
     .tech-result-content {
-        margin-top: 150px;
+        margin-top: 200px;
     }
 
     .tech-result-content h3 {
-        font-size: 5rem;
+        font-size: 4.25rem;
     }
 
     .tech-result {
         margin-top: 80px;
-    }
-
-    .tech-result .correct {
-        padding: 5px 15px;
-    }
-
-    .tech-result .wrong {
-        padding: 10px 25px;
     }
 
     .tech-result .result {
@@ -2875,6 +3085,15 @@ footer p {
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-bottom: 14px solid white;
+    }
+
+    .tech-options {
+        gap: 0 80px;
+        margin-top: 30px;
+    }
+
+    .tech-options button {
+        font-size: 1.5rem;
     }
 
     .history-content {
@@ -2924,6 +3143,10 @@ footer p {
         font-size: 1.5rem;
     }
 
+    .history-options button {
+        width: 230px;
+    }
+
     .math-question p {
         font-size: 3.5rem;
     }
@@ -2951,6 +3174,16 @@ footer p {
 
     .math-result {
         font-size: 2.8rem;
+    }
+
+    .math-options {
+        margin-top: 45px;
+        gap: 0 90px;
+    }
+
+    .math-options button {
+        font-size: 1.4rem;
+        padding: 8px 0;
     }
 
     footer {
@@ -2983,6 +3216,15 @@ footer p {
 
     .paths .inactive img {
         height: 230px;
+    }
+
+    .end-options {
+        gap: 0 140px;
+        margin-top: 7rem;
+    }
+
+    .end-options button {
+        font-size: 2rem;
     }
 
     .banner h2 {
@@ -3080,7 +3322,6 @@ footer p {
         padding-bottom: 210px;
     }
 
-
     .tech-question p {
         font-size: 2.25rem;
     }
@@ -3096,27 +3337,27 @@ footer p {
     }
 
     .tech-result-content {
-        margin-top: 180px;
+        margin-top: 230px;
     }
 
     .tech-result-content h3 {
-        font-size: 6rem;
+        font-size: 5rem;
     }
 
     .tech-result {
         margin-top: 100px;
     }
 
-    .tech-result .wrong {
-        padding: 10px 35px;
-    }
-
-    .tech-result .result {
-        font-size: 4rem;
-    }
-
     .tech-result .result-text {
         font-size: 3rem;
+    }
+
+    .tech-result .correct {
+        padding: 24px 32px;
+    }
+
+    .tech-result .wrong {
+        padding: 24px 32px;
     }
 
     .progress-bar-cont {
@@ -3135,6 +3376,17 @@ footer p {
         border-left: 12px solid transparent;
         border-right: 12px solid transparent;
         border-bottom: 16px solid white;
+    }
+
+    .tech-options {
+        gap: 0 100px;
+        margin-top: 35px;
+    }
+
+    .tech-options button {
+        font-size: 2rem;
+        padding: 12px 24px;
+        border-radius: 15px;
     }
 
     .history-content {
@@ -3160,7 +3412,7 @@ footer p {
 
     .history-result-content h3 {
         font-size: 3.25rem;
-        margin-bottom: 100px;
+        margin-bottom: 85px;
     }
 
     .history-result {
@@ -3179,6 +3431,16 @@ footer p {
     .history-result .result-text {
         font-size: 1.8rem;
     }
+
+    .history-options {
+        gap: 0 80px;
+        margin-top: 50px;
+    }
+
+    .history-options button {
+        width: 280px;
+    }
+
 
     .math-question {
         margin-bottom: 100px;
@@ -3216,6 +3478,16 @@ footer p {
     .math-result {
         font-size: 3rem;
         margin-left: 120px;
+    }
+
+    .math-options {
+        margin-top: 55px;
+        gap: 0 110px;
+    }
+
+    .math-options button {
+        font-size: 1.6rem;
+        padding: 10px 0;
     }
 
     footer {
