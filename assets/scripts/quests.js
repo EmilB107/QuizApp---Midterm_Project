@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 answerButtons[index].parentNode.replaceChild(newButton, answerButtons[index]);
                 
                 newButton.addEventListener('click', function() {
-                    handleAnswer(category, option);
+                    handleAnswer(category, option, this);
                 });
             });
         } else if (category === 'Technology') {
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 answerButtons[index].parentNode.replaceChild(newButton, answerButtons[index]);
                 
                 newButton.addEventListener('click', function() {
-                    handleAnswer(category, option);
+                    handleAnswer(category, option, this);
                 });
             });
         } else if (category === 'History') {
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 answerButtons[index].parentNode.replaceChild(newButton, answerButtons[index]);
                 
                 newButton.addEventListener('click', function() {
-                    handleAnswer(category, option);
+                    handleAnswer(category, option, this);
                 });
             });
         } else if (category === 'Mathematics') {
@@ -243,23 +243,43 @@ document.addEventListener('DOMContentLoaded', function() {
                 answerButtons[index].parentNode.replaceChild(newButton, answerButtons[index]);
                 
                 newButton.addEventListener('click', function() {
-                    handleAnswer(category, option);
+                    handleAnswer(category, option, this);
                 });
             });
         }
     }
     
-    function handleAnswer(category, selectedAnswer) {
+    function handleAnswer(category, selectedAnswer, clickedButton) {
         const currentQuestionIndex = quizState.currentQuestion[category];
         const correctAnswer = quizData[category][currentQuestionIndex].answer;
         
+        const buttons = clickedButton.parentElement.querySelectorAll("button");
+        buttons.forEach(btn => btn.disabled = true);
+
+        const categoryClass = `${category.toLowerCase()}-answers`;
+
         if (selectedAnswer === correctAnswer) {
             quizState.score[category]++;
+            clickedButton.classList.add("correct", categoryClass);
+        } else {
+            clickedButton.classList.add("wrong", categoryClass);
+    
+            buttons.forEach(btn => {
+                if (btn.textContent === correctAnswer) {
+                    btn.classList.add("correct", categoryClass);
+                }
+            });
         }
-        
+
+        setTimeout(() => {
         quizState.currentQuestion[category]++;
         
         if (quizState.currentQuestion[category] < quizData[category].length) {
+            buttons.forEach(btn => {
+                btn.disabled = false;
+                btn.classList.remove("correct", "wrong", categoryClass);
+            });
+
             let overlay;
             switch(category) {
                 case 'Science':
@@ -280,6 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             showResult(category);
         }
+    }, 1500);
     }
     
     function showResult(category) {
