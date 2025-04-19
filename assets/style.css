@@ -340,7 +340,7 @@ h1 {
 
 /* About Overlay */
 .about-overlay {
-    position: absolute;/
+    position: absolute;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -490,6 +490,8 @@ h1 {
     font-family: 'comic-bold', cursive;
     color: #B2B6C6;
     font-size: 0.5rem;
+    width: auto;
+    height: auto;
     padding: 2px 18px;
     margin: 3px 18px;
     border: none;
@@ -497,15 +499,23 @@ h1 {
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .science-answers button:hover {
-    color: white;
-    background-color: #00B900;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
 }
 
-.science-wrong {
+.science-answers .correct {
+    color: white;
+    background-color: #00B900;
+}
+
+.science-answers .wrong {
     color: white;
     background-color: #F03A3A;
 }
@@ -733,7 +743,7 @@ h1 {
 }
 
 .tech-answers button {
-    background: url('/assets/img/tech_button.png') no-repeat center bottom;
+    background: url('../assets/img/tech_button.png') no-repeat center bottom;
     background-size: contain;
     font-family: 'michroma', sans-serif;
     font-size: 0.285rem;
@@ -755,7 +765,13 @@ h1 {
 }
 
 .tech-answers button:hover {
-    background: url('/assets/img/tech_button_hover.png') no-repeat center bottom;
+    background: url('../assets/img/tech_button_hover.png') no-repeat center bottom;
+    background-size: contain;
+    transform: scale(1.05);
+}
+
+.tech-answers .correct {
+    background: url('../assets/img/tech_button_hover.png') no-repeat center bottom;
     background-size: contain;
     text-shadow: 
     0 0 5px #00FF00, 
@@ -763,8 +779,8 @@ h1 {
     0 0 15px #00FF00;
 }
 
-.tech-wrong {
-    background: url('/assets/img/tech_button_wrong.png') no-repeat center bottom;
+.tech-answers .wrong {
+    background: url('../assets/img/tech_button_wrong.png') no-repeat center bottom;
     background-size: contain;
     text-shadow: 
     0 0 5px #FF0000,
@@ -965,7 +981,7 @@ h1 {
 }
 
 .history-answers button {
-    background: url('/assets/img/history_button.png');
+    background: url('../assets/img/history_button.png') no-repeat center center;
     background-size: 100% 100%;
     position: relative;
     font-family: 'ps2p', system-ui;
@@ -974,16 +990,30 @@ h1 {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     height: 20px;
+    width: auto;
+    color: white;
+    padding: 2px 5px;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .history-answers button:hover {
-    background: url('/assets/img/history_button_hover.png');
+    background-size: 100% 100%;
+    color: white;
+    transform: scale(1.05);
+}
+
+.history-answers .correct {
+    background: url('../assets/img/history_button_hover.png') no-repeat center center;
     background-size: 100% 100%;
     color: white;
 }
 
-.history-wrong {
-    background: url('/assets/img/history_button_wrong.png');
+.history-answers .wrong {
+    background: url('../assets/img/history_button_wrong.png') no-repeat center center;
     background-size: 100% 100%;
     color: white;
 }
@@ -1140,49 +1170,55 @@ h1 {
     cursor: pointer;
     background: rgba(255, 255, 255, 0.5);
     transition: transform 0.2s ease;
+    position:relative;
+    overflow: hidden;
 }
 
 .math-answers button:hover {
-    background: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.math-answers button.correct{
+    text-shadow: 
+    0 0 5px #00FF00, 
+    0 0 10px #00FF00, 
+    0 0 15px #00FF00;
+}
+
+.math-answers button.correct::after{
+    content: "";
+    position:absolute;
+    top: 50%;
+    left: 8px;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    background-image: url('../assets/img/math_correct.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.math-answers button.wrong {
+    text-shadow: 
+    0 0 5px #f00,
+    0 0 10px #f00, 
+    0 0 20px #f00, 
+    0 0 30px #f00;
 }
 
 .math-answers button.wrong::after {
     content: "";
     position: absolute;
     top: 50%;
-    left: 3%;
+    left: 8px;
     width: 20px;
     height: 20px;
     transform: translateY(-50%);
     background-color: transparent;
-    background-image: url('/assets/img/math_wrong.png');
+    background-image: url('../assets/img/math_wrong.png');
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0;
-}
-
-.math-answers button.wrong.active span {
-    text-shadow: 0 0 8px rgba(255, 0, 0, 1);
-}
-
-.math-answers button.correct::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    transform: translateY(-50%);
-    background-color: transparent;
-    background-image: url('/assets/img/math_correct.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0;
-}
-
-.math-answers button.correct.active span {
-    text-shadow: 0 0 8px rgba(0, 255, 0, 0.8);
 }
 
 /* Mathematics Result */
@@ -1250,7 +1286,7 @@ h1 {
 
 .math-result .wrong {
     text-shadow: 
-    0 0 5px #f00, /* Subtle red glow */
+    0 0 5px #f00,
     0 0 10px #f00, 
     0 0 20px #f00, 
     0 0 30px #f00;
@@ -3509,3 +3545,11 @@ footer p {
         width: 70%;
     }
 }*/
+
+  .correctt {
+    background-color: #00f508 !important;
+  }
+  
+  .wrongg {
+    background-color: #ff0019 !important;
+  }
