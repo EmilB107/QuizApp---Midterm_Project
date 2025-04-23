@@ -467,38 +467,86 @@ document.addEventListener('DOMContentLoaded', function() {
     hideAllOverlays();
     blurOverlay.style.display = 'none';
 
-    document.querySelectorAll('.retake').forEach(button => {
+
+    document.querySelectorAll('.choose').forEach(button => {
         button.addEventListener('click', () => {
           hideAllOverlays();
-          resetQuiz(category); // new function
-          loadQuestion(category, overlay); // restart quiz logic
+          document.querySelector('.quest-paths').style.display = 'flex';
+          QuestPaths.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+    document.querySelectorAll('.retake').forEach(button => {
+        button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+        let overlay;
+
+        switch(category) {
+            case 'Science':
+                overlay =scienceOverlay;
+                break;
+            case 'Technology':
+                overlay = techOverlay;
+                break;
+            case 'History':
+                overlay = historyOverlay;
+                break;
+            case 'Mathematics':
+                overlay = mathOverlay;
+                break;
+        }
+
+          resetQuiz(category);
+          hideAllOverlays();
+          loadQuestion(category, overlay);
+          overlay.classList.add('active');
+          overlay.scrollIntoView({ behavior: 'smooth' });
+          blurOverlay.style.display = 'block';
+          updatePathBanners();
         });
       });
 
 
       function resetQuiz(category) {
-        if (category === 'science') {
-          scienceIndex = 0;
-          scienceScore = 0;
-        } else if (category === 'tech') {
-          techIndex = 0;
-          techScore = 0;
-        } else if (category === 'history') {
-          historyIndex = 0;
-          historyScore = 0;
-        } else if (category === 'math') {
-          mathIndex = 0;
-          mathScore = 0;
-        }
-      }
+        quizState.currentQuestion[category] = 0;
+        quizState.score[category] = 0;
+        completedPaths[category.toLowerCase()] = false;
 
-      document.querySelectorAll('.choose').forEach(button => {
-        button.addEventListener('click', () => {
-          hideAllOverlays();
-          // Show path selection again
-          document.querySelector('.quest-paths').style.display = 'flex';
-          QuestPaths.scrollIntoView({ behavior: 'smooth' });
-        });
-      });
+        let overlay;
+        let answerSelector;
+
+        switch(category){
+
+            case 'Science':
+                overlay = scienceOverlay;
+                answerSelector = '.science-answers button';
+                break;
+            case 'Technology':
+                overlay = techOverlay;
+                answerSelector = '.tech-answers button';
+                break;
+            case 'History':
+                overlay = historyOverlay;
+                answerSelector = '.history-answers button';
+                break;
+            case 'Mathematics':
+                overlay = mathOverlay;
+                answerSelector = '.math-answers button';
+                break;
+        }
+
+        if (overlay && answerSelector){
+            const buttons = overlay.querySelectorAll(answerSelector);
+            buttons.forEach(btn =>{
+                btn.disabled =false;
+                btn.classList.remove('correct', 'wrong');
+                btn.classList.remove(`${category.toLowerCase()}-answers`);
+
+            })
+
+        }
+
+
+      }
 
 });
