@@ -331,43 +331,44 @@ document.addEventListener('DOMContentLoaded', function() {
                         #f44336 0deg ${360 - scorePercentage}deg,
                         #4caf50 ${360 - scorePercentage}deg 360deg
                     )`;
+                
                 scienceResultOverlay.classList.add('active');
-            
                 completedPaths.science = true;
-                updatePathBanners();
-
                 break;
+
             case 'Technology':
                 const techResultPercentage = (score / total) * 100;
                 techResultOverlay.querySelector('.progress-bar').style.width = `${techResultPercentage}%`;
                 techResultOverlay.querySelector('.progress-label p').textContent = `${techResultPercentage}%`;
                 techResultOverlay.querySelector('.correct .result').textContent = score;
                 techResultOverlay.querySelector('.wrong .result').textContent = wrong;
+                
                 techResultOverlay.classList.add('active');
-
                 completedPaths.tech = true;
-                updatePathBanners();
 
                 break;
+            
             case 'History':
                 historyResultOverlay.querySelector('.correct .result').textContent = score;
                 historyResultOverlay.querySelector('.wrong .result').textContent = wrong;
+                
                 historyResultOverlay.classList.add('active');
-
                 completedPaths.history = true;
-                updatePathBanners();
-
+        
                 break;
+            
             case 'Mathematics':
                 mathResultOverlay.querySelector('.correct').textContent = score;
                 mathResultOverlay.querySelector('.wrong').textContent = wrong;
+                
                 mathResultOverlay.classList.add('active');
-
                 completedPaths.math = true;
-                updatePathBanners();
 
                 break;
         }
+
+        updatePathBanners();
+        document.querySelector('.quest-paths').style.display = 'flex';
         
         if (
             completedPaths.science &&
@@ -377,6 +378,11 @@ document.addEventListener('DOMContentLoaded', function() {
         ) {
             resultOverlay.classList.add('active');
             resultOverlay.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        const endOptions = document.querySelector('.end-options');
+        if (endOptions) {
+            endOptions.style.display = 'flex';
         }
         
         updateTotalResults();
@@ -478,36 +484,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.retake').forEach(button => {
         button.addEventListener('click', () => {
-        const category = button.getAttribute('data-category');
-        let overlay;
+            const category = button.getAttribute('data-category');
+            let overlay;
 
-        switch(category) {
-            case 'Science':
-                overlay =scienceOverlay;
-                break;
-            case 'Technology':
-                overlay = techOverlay;
-                break;
-            case 'History':
-                overlay = historyOverlay;
-                break;
-            case 'Mathematics':
-                overlay = mathOverlay;
-                break;
-        }
+            switch(category) {
+                case 'Science':
+                    overlay =scienceOverlay;
+                    break;
+                case 'Technology':
+                    overlay = techOverlay;
+                    break;
+                case 'History':
+                    overlay = historyOverlay;
+                    break;
+                case 'Mathematics':
+                    overlay = mathOverlay;
+                    break;
+            }
 
-          resetQuiz(category);
-          hideAllOverlays();
-          loadQuestion(category, overlay);
-          overlay.classList.add('active');
-          overlay.scrollIntoView({ behavior: 'smooth' });
-          blurOverlay.style.display = 'block';
-          updatePathBanners();
+            resetQuiz(category);
+            hideAllOverlays();
+            loadQuestion(category, overlay);
+            overlay.classList.add('active');
+            overlay.scrollIntoView({ behavior: 'smooth' });
+            blurOverlay.style.display = 'block';
+            updatePathBanners();
         });
-      });
+    });
 
 
-      function resetQuiz(category) {
+    function resetQuiz(category) {
         quizState.currentQuestion[category] = 0;
         quizState.score[category] = 0;
         completedPaths[category.toLowerCase()] = false;
@@ -541,12 +547,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 btn.disabled =false;
                 btn.classList.remove('correct', 'wrong');
                 btn.classList.remove(`${category.toLowerCase()}-answers`);
-
             })
-
         }
+    }
 
+    document.querySelector('.view-score').addEventListener('click', function() {
+        hideAllOverlays();
+        resultOverlay.classList.add('active');
+        resultOverlay.scrollIntoView({ behavior: 'smooth' });
+        blurOverlay.style.display = 'block';
+    });
 
-      }
+    document.querySelector('.end-options button:nth-child(2)').addEventListener('click', function() {
+        for (const category in quizState.currentQuestion) {
+            quizState.currentQuestion[category] = 0;
+            quizState.score[category] = 0;
+        }
+        
+        for (const path in completedPaths) {
+            completedPaths[path] = false;
+        }
+        
+        updatePathBanners();
+        hideAllOverlays();
+        document.querySelector('.quest-paths').style.display = 'flex';
+        QuestPaths.scrollIntoView({ behavior: 'smooth' });
+    });
 
 });
