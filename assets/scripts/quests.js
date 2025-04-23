@@ -109,6 +109,12 @@ const quizData = {
     ]
 };
 
+const completedPaths = {
+    science: false,
+    tech: false,
+    history: false,
+    math: false
+  };
 
 document.addEventListener('DOMContentLoaded', function() {
     const categoryLinks = document.querySelectorAll('.paths ul li a');
@@ -123,7 +129,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const mathResultOverlay = document.querySelector('.math-result-overlay');
     const resultOverlay = document.querySelector('.result-overlay');
     const blurOverlay = document.querySelector('.blur-overlay');
-    
+    const QuestPaths = document.querySelector('.quest-paths');
+
     const quizState = {
         currentQuestion: {
             "Science": 0,
@@ -145,6 +152,8 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault(); 
             
             hideAllOverlays();
+
+            document.getElementById('sel-quest-paths').style.display = 'none';
             
             const categorySpan = this.querySelector('span[class$="-label"]');
             if (!categorySpan) return;
@@ -323,6 +332,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         #4caf50 ${360 - scorePercentage}deg 360deg
                     )`;
                 scienceResultOverlay.classList.add('active');
+            
+                completedPaths.science = true;
+                updatePathBanners();
+
                 break;
             case 'Technology':
                 const techResultPercentage = (score / total) * 100;
@@ -331,20 +344,64 @@ document.addEventListener('DOMContentLoaded', function() {
                 techResultOverlay.querySelector('.correct .result').textContent = score;
                 techResultOverlay.querySelector('.wrong .result').textContent = wrong;
                 techResultOverlay.classList.add('active');
+
+                completedPaths.tech = true;
+                updatePathBanners();
+
                 break;
             case 'History':
                 historyResultOverlay.querySelector('.correct .result').textContent = score;
                 historyResultOverlay.querySelector('.wrong .result').textContent = wrong;
                 historyResultOverlay.classList.add('active');
+
+                completedPaths.history = true;
+                updatePathBanners();
+
                 break;
             case 'Mathematics':
                 mathResultOverlay.querySelector('.correct').textContent = score;
                 mathResultOverlay.querySelector('.wrong').textContent = wrong;
                 mathResultOverlay.classList.add('active');
+
+                completedPaths.math = true;
+                updatePathBanners();
+
                 break;
         }
         
+        if (
+            completedPaths.science &&
+            completedPaths.tech &&
+            completedPaths.history &&
+            completedPaths.math
+        ) {
+            resultOverlay.classList.add('active');
+            resultOverlay.scrollIntoView({ behavior: 'smooth' });
+        }
+        
         updateTotalResults();
+    }
+
+    function updatePathBanners() {
+      const pathItems = document.querySelectorAll('.paths li');
+
+      pathItems.forEach(path => {
+        const label = path.querySelector('span');
+        const anchor = path.querySelector('a');
+        if (!label || !anchor) return;
+
+            const labelCategory = label.classList[0].replace('-label', '').toLowerCase();
+
+            if (completedPaths[labelCategory]){
+                label.classList.add('completed-category');
+                anchor.classList.add('done');
+            } else {
+                label.classList.remove('completed-category');
+                anchor.classList.remove('done');
+
+            }
+
+            });
     }
     
     function updateTotalResults() {
@@ -363,6 +420,19 @@ document.addEventListener('DOMContentLoaded', function() {
         resultOverlay.querySelector('.result-total p:last-child').textContent = totalScore;
     }
     
+    document.querySelectorAll('.paths li').forEach(path => {
+        const label = path.querySelector('span');
+        if (!label) return;
+      
+        const labelCategory = label.classList[0].replace('-label', '');
+      
+        if (completedPaths[labelCategory]) {
+          path.classList.add('done');
+        } else {
+          path.classList.remove('done');
+        }
+      });
+
     function hideAllOverlays() {
         scienceOverlay.classList.remove('active');
         techOverlay.classList.remove('active');
@@ -386,27 +456,7 @@ document.addEventListener('DOMContentLoaded', function() {
         hideAllOverlays();
         blurOverlay.style.display = 'none';
     });
-    
-    scienceResultOverlay.addEventListener('click', function() {
-        hideAllOverlays();
-        resultOverlay.classList.add('active');
-    });
-    
-    techResultOverlay.addEventListener('click', function() {
-        hideAllOverlays();
-        resultOverlay.classList.add('active');
-    });
-    
-    historyResultOverlay.addEventListener('click', function() {
-        hideAllOverlays();
-        resultOverlay.classList.add('active');
-    });
-    
-    mathResultOverlay.addEventListener('click', function() {
-        hideAllOverlays();
-        resultOverlay.classList.add('active');
-    });
-    
+  
     document.addEventListener('click', function(event) {
         if (event.target.classList.contains('blur-overlay')) {
             hideAllOverlays();
@@ -416,4 +466,39 @@ document.addEventListener('DOMContentLoaded', function() {
     
     hideAllOverlays();
     blurOverlay.style.display = 'none';
+
+    document.querySelectorAll('.retake').forEach(button => {
+        button.addEventListener('click', () => {
+          hideAllOverlays();
+          resetQuiz(category); // new function
+          loadQuestion(category, overlay); // restart quiz logic
+        });
+      });
+
+
+      function resetQuiz(category) {
+        if (category === 'science') {
+          scienceIndex = 0;
+          scienceScore = 0;
+        } else if (category === 'tech') {
+          techIndex = 0;
+          techScore = 0;
+        } else if (category === 'history') {
+          historyIndex = 0;
+          historyScore = 0;
+        } else if (category === 'math') {
+          mathIndex = 0;
+          mathScore = 0;
+        }
+      }
+
+      document.querySelectorAll('.choose').forEach(button => {
+        button.addEventListener('click', () => {
+          hideAllOverlays();
+          // Show path selection again
+          document.querySelector('.quest-paths').style.display = 'flex';
+          QuestPaths.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
 });
