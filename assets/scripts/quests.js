@@ -469,14 +469,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     document.querySelector('.result-overlay button').addEventListener('click', function() {
-        for (const category in quizState.currentQuestion) {
-            quizState.currentQuestion[category] = 0;
-            quizState.score[category] = 0;
-        }
-        
         hideAllOverlays();
         blurOverlay.style.display = 'none';
     });
+    
   
     document.addEventListener('click', function(event) {
         if (event.target.classList.contains('blur-overlay')) {
@@ -488,7 +484,6 @@ document.addEventListener('DOMContentLoaded', function() {
     hideAllOverlays();
     blurOverlay.style.display = 'none';
 
-
     document.querySelectorAll('.choose').forEach(button => {
         button.addEventListener('click', () => {
           hideAllOverlays();
@@ -496,37 +491,6 @@ document.addEventListener('DOMContentLoaded', function() {
           QuestPaths.scrollIntoView({ behavior: 'smooth' });
         });
       });
-
-    document.querySelectorAll('.retake').forEach(button => {
-        button.addEventListener('click', () => {
-            const category = button.getAttribute('data-category');
-            let overlay;
-
-            switch(category) {
-                case 'Science':
-                    overlay =scienceOverlay;
-                    break;
-                case 'Technology':
-                    overlay = techOverlay;
-                    break;
-                case 'History':
-                    overlay = historyOverlay;
-                    break;
-                case 'Mathematics':
-                    overlay = mathOverlay;
-                    break;
-            }
-
-            resetQuiz(category);
-            hideAllOverlays();
-            loadQuestion(category, overlay);
-            overlay.classList.add('active');
-            overlay.scrollIntoView({ behavior: 'smooth' });
-            blurOverlay.style.display = 'block';
-            updatePathBanners();
-        });
-    });
-
 
     function resetQuiz(category) {
         quizState.currentQuestion[category] = 0;
@@ -568,6 +532,36 @@ document.addEventListener('DOMContentLoaded', function() {
             retakeQuestButton.style.display = 'none';
         }
     }
+    
+    document.querySelectorAll('.retake').forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.getAttribute('data-category');
+            let overlay;
+
+            switch(category) {
+                case 'Science':
+                    overlay =scienceOverlay;
+                    break;
+                case 'Technology':
+                    overlay = techOverlay;
+                    break;
+                case 'History':
+                    overlay = historyOverlay;
+                    break;
+                case 'Mathematics':
+                    overlay = mathOverlay;
+                    break;
+            }
+
+            resetQuiz(category);
+            hideAllOverlays();
+            loadQuestion(category, overlay);
+            overlay.classList.add('active');
+            overlay.scrollIntoView({ behavior: 'smooth' });
+            blurOverlay.style.display = 'block';
+            updatePathBanners();
+        });
+    });
 
     document.querySelector('.view-score').addEventListener('click', function() {
         hideAllOverlays();
@@ -577,113 +571,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.querySelector('.end-options button:nth-child(2)').addEventListener('click', function() {
-        for (const category in quizState.currentQuestion) {
-            quizState.currentQuestion[category] = 0;
-            quizState.score[category] = 0;
-        }
-        
-        for (const path in completedPaths) {
-            completedPaths[path] = false;
-        }
-
-        const resultElements = resultOverlay.querySelectorAll('.result-each p');
-        resultElements[1].textContent = "0";
-        resultElements[3].textContent = "0";
-        resultElements[5].textContent = "0";
-        resultElements[7].textContent = "0";
-        resultOverlay.querySelector('.result-total p:last-child').textContent = "0";
-
-        resetCategoryUI('Science', scienceOverlay, '.science-answers button');
-        resetCategoryUI('Technology', techOverlay, '.tech-answers button');
-        resetCategoryUI('History', historyOverlay, '.history-answers button');
-        resetCategoryUI('Mathematics', mathOverlay, '.math-answers button');
-        
-        this.style.display = 'none';
-        
-        updatePathBanners();
-        hideAllOverlays();
-        document.querySelector('.quest-paths').style.display = 'flex';
-        QuestPaths.scrollIntoView({ behavior: 'smooth' });
-    });
-
-    function resetCategoryUI(category, overlay, buttonSelector) {
-        const buttons = overlay.querySelectorAll(buttonSelector);
-        buttons.forEach(btn => {
-            btn.disabled = false;
-            btn.classList.remove('correct', 'wrong');
-            btn.classList.remove(`${category.toLowerCase()}-answers`);
-
-            const newButton = btn.cloneNode(true);
-            btn.parentNode.replaceChild(newButton, btn);
-        });
-    
-        try {
-            if (category === 'Science') {
-                const questionData = quizData[category][0];
-                overlay.querySelector('.science-title p').textContent = `Q1`;
-                overlay.querySelector('.science-question p').textContent = questionData.question;
-                
-                const answerButtons = overlay.querySelectorAll('.science-answers button');
-                questionData.options.forEach((option, index) => {
-                    answerButtons[index].textContent = option;
-                    
-                    answerButtons[index].addEventListener('click', function() {
-                        handleAnswer(category, option, this);
-                    });
-                });
-            } else if (category === 'Technology') {
-                const questionData = quizData[category][0];
-                overlay.querySelector('.tech-title p').textContent = `Q1`;
-                overlay.querySelector('.tech-question p').textContent = questionData.question;
-                
-                const answerButtons = overlay.querySelectorAll('.tech-answers button');
-                questionData.options.forEach((option, index) => {
-                    if (answerButtons[index].querySelector('span')) {
-                        answerButtons[index].querySelector('span').textContent = option;
-                    } else {
-                        answerButtons[index].textContent = option;
-                    }
-                    
-                    answerButtons[index].addEventListener('click', function() {
-                        handleAnswer(category, option, this);
-                    });
-                });
-            } else if (category === 'History') {
-                const questionData = quizData[category][0];
-                overlay.querySelector('.history-question p').textContent = questionData.question;
-                
-                const answerButtons = overlay.querySelectorAll('.history-answers button');
-                questionData.options.forEach((option, index) => {
-                    const span = answerButtons[index].querySelector('span');
-                    if (span) {
-                        span.textContent = option;
-                    } else {
-                        answerButtons[index].textContent = option;
-                    }
-                    
-                    answerButtons[index].addEventListener('click', function() {
-                        handleAnswer(category, option, this);
-                    });
-                });
-            } else if (category === 'Mathematics') {
-                const questionData = quizData[category][0];
-                overlay.querySelector('.math-question p').textContent = questionData.question;
-                
-                const answerButtons = overlay.querySelectorAll('.math-answers button');
-                questionData.options.forEach((option, index) => {
-                    if (answerButtons[index].querySelector('span')) {
-                        answerButtons[index].querySelector('span').textContent = option;
-                    } else {
-                        answerButtons[index].textContent = option;
-                    }
-                    
-                    answerButtons[index].addEventListener('click', function() {
-                        handleAnswer(category, option, this);
-                    });
-                });
-            }
-        } catch (e) {
-            console.error(`Error resetting ${category} UI:`, e);
-        }
-    }
-});
+        location.reload();
+    });    
+});  
