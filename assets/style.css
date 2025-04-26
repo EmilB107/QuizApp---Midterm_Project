@@ -111,7 +111,7 @@ body {
 /* hero or whatever section */
 
 header {
-    background-image: url('/assets/img/upper_bg.png');
+    background-image: url('../assets/img/upper_bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -190,7 +190,7 @@ a.done {
 
 /* quest paths section */
 .quest-paths {
-    background-image: url('/assets/img/lower_bg.png');
+    background-image: url('../assets/img/lower_bg.png');
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
